@@ -1,6 +1,6 @@
 # Event Tematik — Kerangka dan Usulan “Karhutla”
 
-**Versi:** 0.2 · **Tanggal:** 27 Oktober 2026  
+**Versi:** 0.3 · **Tanggal:** 30 Oktober 2026  
 **Dasar:** ide terbaru pengguna tentang event bertema kondisi Indonesia, pada satu map fiksi, dengan sains dasar dalam beberapa aspek permainan.  
 **Rujukan:** [PRD](../PRD.md), [Prototipe](PROTOTYPE.md), [Level](LEVEL_DESIGN.md), [Konten](CONTENT.md), [UI/UX](UI_UX.md).
 
@@ -8,7 +8,7 @@
 
 **ARAH DISETUJUI DALAM DISKUSI:** identitas memakai nama game utama + judul event; “Karhutla” adalah contoh judul event, bukan nama game utama atau chapter. Dunia berupa satu map fiksi dengan banyak referensi Indonesia. Event dapat membawa tema berbeda, mengubah tantangan memperoleh bahan dan memanfaatkan sains sederhana di beberapa kegiatan. Kebakaran harus benar-benar menjadi kejadian di dunia, bukan sekadar tema poster.
 
-**DEFAULT RENCANA:** P0 tetap membuktikan satu loop memasak sebelum event aktif ditambahkan. Event pertama masuk jalur P1 setelah gerbang gameplay/save dasar lulus. Ini pembagian produksi untuk mengendalikan cakupan, bukan penghapusan ide.
+**DEFAULT RENCANA:** P0 membuktikan satu loop memasak sebelum event aktif ditambahkan. Event pertama masuk jalur P1 setelah gerbang gameplay/save dasar lulus; sejak 30 Oktober 2026 itu berarti setelah gerbang P0.5 "Kampung Hidup" (QA-002, PRD D26), yang sengaja tidak memuat event. Ini pembagian produksi untuk mengendalikan cakupan, bukan penghapusan ide.
 
 **USULAN BARU:** rincian aktivasi, titik api, alur, angka, UI tambahan dan resep event dalam dokumen ini adalah rancangan konkret yang belum diuji. Pengguna belum mengunci seluruh detail. Jangan menandai event sudah terimplementasi atau seluruhnya disetujui hanya karena ide utamanya telah dibahas.
 
@@ -26,7 +26,7 @@ Buku tetap tujuan utama, memasak tetap loop pengikat. Event mengubah **cara menc
 
 Satu map menyimpan rumah, kebun dan landmark yang sudah dikenal. Event menerapkan perubahan pada subset objek melalui ID stabil. Rumah aman, save dan sumber pemulihan awal tetap tersedia. Karhutla mengganggu jalur menuju kebun; pemain menanggapi masalah lokal agar dapat melanjutkan kebutuhan masakan.
 
-Resep P0 tetap sama dan tidak dihapus. Event pertama memakai resep tersebut sebagai uji hubungan event–bahan; resep baru bukan prasyarat membuktikan event. Resep event tambahan nanti memerlukan definisi lengkap CONTENT, bukan kartu kosong di buku.
+Resep P0 tetap sama dan tidak dihapus. Event pertama memakai resep tersebut sebagai uji hubungan event–bahan; resep baru bukan prasyarat membuktikan event. Pada P0.5 buku memiliki tiga resep warisan; default rancangan event tetap memakai resep pertama, dan EV-001 memutuskan apakah tiga resep itu mengubah prasyarat atau pilihan resep event. Area hutan desa P0.5 menyisakan tepi yang kelak dapat menjadi koridor event tanpa dibangun sekarang (LEVEL_DESIGN bagian 2.1). Resep event tambahan nanti memerlukan definisi lengkap CONTENT, bukan kartu kosong di buku.
 
 ## 4. Usulan alur Karhutla
 
@@ -72,7 +72,7 @@ Sebelum aktivasi, pastikan tidak ada job memasak aktif dan buat checkpoint pra-e
 
 Checkpoint pra-event adalah tambahan khusus P1, terpisah dari checkpoint manual/autosave P0. Simpan sebagai snapshot yang tidak ditimpa autosave berikutnya selama event berlangsung. Tawarkan pemuatan dengan peringatan kehilangan progres sejak aktivasi; bukan tombol membatalkan event sambil mempertahankan barang hasil event.
 
-Pada aktivasi, simpan jumlah masakan yang pernah dibuat sebagai baseline dan reset flag penggunaan khusus event. Akhir event mensyaratkan commit masakan baru setelah aktivasi, lalu makan/berbagi setelah commit itu. Centang buku dan `meal_used` P0 yang sudah ada tidak otomatis memenuhi event; aturan angka dan urutan lengkap pada CONTENT.
+Pada aktivasi, simpan jumlah masakan yang pernah dibuat sebagai baseline per resep (P0.5 memiliki tiga resep) dan reset flag penggunaan khusus event. Akhir event mensyaratkan commit masakan baru setelah aktivasi, lalu makan/berbagi setelah commit itu. Centang buku dan `meal_used` P0 yang sudah ada tidak otomatis memenuhi event; aturan angka dan urutan lengkap pada CONTENT.
 
 Keadaan konseptual: `available → warning → active → contained → recovery → resolved`. `active` berarti kejadian kebakaran berjalan; `contained` berarti target koridor lokal terkendali; `recovery` berarti pekerjaan pascakejadian; `resolved` berarti tujuan lokal dan masakan event selesai. Nama `contained` tidak menyatakan seluruh wilayah bebas risiko.
 
@@ -91,7 +91,7 @@ Tambahan konseptual, belum skema runtime yang diimplementasikan:
 | RecoverySite | ID, inspeksi, intervensi, kemajuan pemulihan, batas penggunaan pangan |
 | EventCheckpoint | Identitas snapshot pra-event dan versi save yang valid |
 
-Event tidak menimpa data petak awal atau inventaris dengan baseline kosong. Gunakan ID sumber yang sama jika objek sama, dan ID baru untuk objek event baru. Job memasak dan panen tetap memakai aturan transaksi P0. Save memuat definisi versi yang cocok; konten event hilang/tidak cocok tidak boleh menyebabkan penghapusan progres diam-diam.
+Pada dunia chunk P0.5 perubahan event disimpan sebagai override berdasarkan ID objek yang stabil, bukan dengan mengubah keluaran generator dunia; objek prosedural hanya boleh dirujuk event bila ID-nya stabil pada versi generator yang sama. Event tidak menimpa data petak awal atau inventaris dengan baseline kosong. Gunakan ID sumber yang sama jika objek sama, dan ID baru untuk objek event baru. Job memasak dan panen tetap memakai aturan transaksi P0. Save memuat definisi versi yang cocok; konten event hilang/tidak cocok tidak boleh menyebabkan penghapusan progres diam-diam.
 
 Load hanya memulihkan keadaan, bukan memutar ulang aktivasi, mengurangi air lagi atau memberi reward kedua kali. Penulisan snapshot mengikuti kontrak safe save PROTOTYPE. Timer api/spread hanya berjalan saat simulasi aktif, termasuk dapur aktif sesuai kontrak waktu; pause, buku, tas, dialog dan aplikasi tertutup menghentikannya.
 
@@ -103,7 +103,7 @@ Gunakan status “Api aktif”, “Mereda”, “Koridor terkendali”, “Perlu
 
 ## 10. Uji dan gerbang produksi
 
-Event baru boleh diimplementasikan setelah P0 gameplay/save terbukti. Task persiapannya tercatat EV-001 dan seterusnya pada TASKS. Kriteria event: api benar-benar berubah keadaan, akses bahan terhubung tujuan, jalur pemulihan selalu ada, UI tetap sederhana, menu menghentikan timer, dan save/load tidak menggandakan suplai/reward.
+Event baru boleh diimplementasikan setelah P0 gameplay/save terbukti dan gerbang P0.5 (QA-002) lulus. Task persiapannya tercatat EV-001 dan seterusnya pada TASKS dan bergantung ke QA-002; dependensi lama ke QA-001 dicatat di TASKS sebagai riwayat. Kriteria event: api benar-benar berubah keadaan, akses bahan terhubung tujuan, jalur pemulihan selalu ada, UI tetap sederhana, menu menghentikan timer, dan save/load tidak menggandakan suplai/reward.
 
 Penguji harus dapat menjelaskan satu sebab-akibat dari tindakannya tanpa menghafal istilah sains. Pastikan juga ia memahami bahwa api padam tidak berarti lahan pulih, dan air/hasil pangan terdampak tidak langsung aman. Data keberhasilan berasal dari playtest, bukan asumsi dokumen.
 
@@ -120,3 +120,10 @@ Sumber berikut mendukung konsep umum, bukan validasi angka mekanik atau panduan 
 - **[S3]** Food and Agriculture Organization, [Drought-resistant soils](https://www.fao.org/4/a0072e/a0072e07.htm): peran penutup tanah/mulsa dalam mengurangi penguapan permukaan.
 
 Sains lokal Indonesia, tipe vegetasi, gambut, musim, pencemar dan tindakan pemulihan spesifik belum divalidasi untuk event ini. Judul Karhutla tidak otomatis berarti simulasi kebakaran gambut. Sebelum menulis narasi atau mekanik spesifik, verifikasi konteks tersebut dan batasi klaimnya.
+
+## 13. Riwayat perubahan
+
+| Versi | Tanggal | Perubahan |
+| --- | --- | --- |
+| 0.2 | 27 Oktober 2026 | Kerangka event dan usulan Karhutla |
+| 0.3 | 30 Oktober 2026 | SCOPE-001: gerbang event dipindah ke QA-002 (P0.5 tidak memuat event), baseline masakan per resep, override event pada dunia chunk; event tetap USULAN BARU |

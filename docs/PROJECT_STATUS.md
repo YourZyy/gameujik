@@ -23,13 +23,16 @@
 - [ART-001 — Identitas visual dan audio dasar yang konsisten](completed_tasks/017-identitas-visual-audio-dasar-konsisten.md).
 - [QA-001 — Playthrough penerimaan P0 gameplay dan verifikasi regresi akhir](completed_tasks/018-playthrough-penerimaan-p0-gameplay-regresi-akhir.md).
 - [PLAN-001 — Perencanaan upgrade visual, dunia chunk streaming, NPC bergerak dan goal 3 resep](completed_tasks/019-perencanaan-upgrade-kampung-hidup.md).
+- [REPO-001 — Artefak agen lokal dikeluarkan dari indeks Git tanpa menulis ulang riwayat](completed_tasks/021-repo-001-bersihkan-indeks-git.md).
+- [TEST-001 — 19 skrip stres dipindah ke tests/tools dan tests/README ditambahkan (runner belum dijalankan)](completed_tasks/022-test-001-rapikan-skrip-tests.md).
+- [ASSET-001 — Kebijakan, log dan struktur aset; jalur aktif generator kode](completed_tasks/023-asset-001-kebijakan-log-aset.md).
 
 ## Deskripsi Status Pekerjaan Terakhir
 
-**Pembaruan:** 30 Oktober 2026. **Task terakhir:** PLAN-001 (SELESAI — perencanaan saja). **Task aktif:** DEMO-001 (DIKERJAKAN).
+**Pembaruan:** 30 Oktober 2026. **Status:** DIJEDA atas permintaan pengguna. **Task selesai terakhir:** ASSET-001 (laporan 023). **Task berjalan:** SCOPE-001 (DIKERJAKAN); DEMO-001 (DIKERJAKAN, menunggu pengguna).
 
-Setelah milestone P0 (QA-001), pemilik meminta visual lebih baik, goal 3 resep warisan, dunia ~1 km² dengan chunk streaming, dan NPC bergerak. Empat dokumen rencana serta satu rencana induk ditulis di [docs/plans/](plans/00-rencana-induk.md): dunia/chunk, visual/aset/UI, goal/resep/NPC, dan dampak dokumen/uji/risiko. Rencana induk menyelaraskan ID task yang bertabrakan antar dokumen dan menyusun enam gelombang kerja mulai SCOPE-001.
+Gelombang 1 rencana induk ([plans/00](plans/00-rencana-induk.md)) selesai sebagian. REPO-001, TEST-001 dan ASSET-001 selesai dan sudah di remote. TEST-001 hanya memindahkan skrip; runner belum dijalankan (Godot tidak ada di sesi cloud), jadi 26 suite/8.854 asersi harus dicek ulang di Windows. ASSET-001 menetapkan generator kode sebagai jalur aktif: klaim CC0 repo Kenney baru tingkat README dan tidak cocok untuk dunia Indonesia.
 
-Semua isi rencana berstatus USULAN. PRD, CONTENT, LEVEL_DESIGN, ART_DIRECTION dan TEST_PLAN belum diubah; keputusan lama (mis. D19 satu NPC) masih berlaku sampai SCOPE-001 dijalankan setelah pemilik menjawab pertanyaan di §5 rencana induk. Dokumen 01–04 baru dibaca sebagian oleh koordinator. Tidak ada kode game yang berubah dan Godot tidak dijalankan; angka performa masih hipotesis.
+SCOPE-001 dihentikan di tengah jalan. Belum di-commit sebagai selesai: sembilan dokumen sudah diubah ke v0.3 (PRD D26–D32, README, CONTENT bagian 15–20, LEVEL_DESIGN, ART_DIRECTION, PROTOTYPE, TEST_PLAN, UI_UX, EVENT_DESIGN). Belum dikerjakan: CONSISTENCY_CHECK (bagian audit v0.3), pemeriksaan silang ID/T-nomor/tautan lintas berkas, dan laporan 020. Isi dokumen yang diubah belum ditinjau koordinator maupun pemilik.
 
-Kendala: push ke GitHub ditolak (403) karena akses `YourZyy/gameujik` belum tersambung; commit hanya ada lokal di container. Bukti desktop DEMO-001 dan peringatan ObjectDB (FIX-002) tetap menunggu run di Windows pengguna. Langkah berikutnya: pemilik menjawab pertanyaan rencana induk, lalu SCOPE-001, REPO-001, TEST-001, ASSET-001. DIST-001 belum dimulai.
+Langkah berikutnya: lanjutkan SCOPE-001 (periksa konsistensi, tulis laporan 020), lalu gelombang 2: FIX-001, VIS-001, WORLD-002, GOAL-001a. Tidak ada kode game yang berubah. DIST-001 belum dimulai.

@@ -1,19 +1,21 @@
 # UI, UX, Kontrol dan Wireframe
 
-**Versi:** 0.2 · **Tanggal:** 27 Oktober 2026  
+**Versi:** 0.3 · **Tanggal:** 30 Oktober 2026  
 **Prinsip wajib:** sederhana, nyaman, mudah dipahami. **Rujukan:** [PRD](../PRD.md), [CONTENT](CONTENT.md), [PROTOTYPE](PROTOTYPE.md).
 
 ## 1. Sasaran pengalaman
 
 Pemain selalu memahami tujuan dekat, objek yang sedang dihadapi, dan tindakan yang bisa dilakukan. Informasi baru muncul ketika dibutuhkan. Kompleksitas keadaan internal tidak menjadi kewajiban membaca panel statistik.
 
-Pada layar bermain normal, tampilkan hanya tracker atas kiri, crosshair, satu prompt, satu alat aktif dan notifikasi singkat bila ada. Jangan menambah health/hunger bar, uang, minimap, panel seluruh tugas, jam besar, empat meter tanah atau daftar shortcut permanen. Waktu hanya ditampilkan saat istirahat/muat jika berguna.
+Pada layar bermain normal, tampilkan hanya tracker atas kiri, crosshair, satu prompt, satu alat aktif dan notifikasi singkat bila ada. Jangan menambah health/hunger bar, uang, minimap, panel seluruh tugas, jam besar, empat meter tanah atau daftar shortcut permanen. Waktu hanya ditampilkan saat istirahat/muat jika berguna. Aturan ini tetap pada P0.5: dunia luas, warga bergerak dan tiga resep tidak menambah panel, jam, kompas atau minimap pada layar bermain.
 
 ## 2. Aturan tata letak dan keterbacaan
 
 Angka layout/tipografi berikut adalah DEFAULT UJI desain antarmuka, bukan angka konten simulasi. Baseline rancangan 1920 × 1080, dengan pengujian juga pada 1280 × 720 dan skala 100%, 125%, 150%. Layout mengikuti anchor dan kontainer, bukan posisi piksel kaku. Safe margin sekitar 4% sisi layar. Target teks isi sekitar 22–26 px pada baseline, judul 30–40 px; ini DEFAULT UJI tipografi, diperbaiki bila penguji sulit membaca.
 
 Panel memakai latar solid/nyaris solid agar teks terbaca di depan kebun, langit atau api. Warna tidak menjadi satu-satunya pembeda: tambahkan teks, ikon dan bentuk. Fokus keyboard terlihat. Tombol cukup besar untuk diklik tanpa ketelitian tinggi. Lebih baik memperpanjang panel/scroll daripada mengecilkan teks demi menampung semua informasi.
+
+P0.5: gaya UI disatukan dalam satu Theme (VIS-004) sehingga warna, bentuk tombol, panel kertas dan font tidak tersebar sebagai override per layar; status tidak lagi dibedakan hanya oleh warna modulasi, tetapi juga oleh teks atau ikon centang. Nama node yang dicari tes dipertahankan saat refaktor.
 
 Bahasa antarmuka Indonesia. Nama/jumlah tidak disembunyikan di tooltip. Hindari singkatan teknis, raw ID atau kategori angka tanah pada HUD. Teks panjang dapat dibaca langsung; animasi ketik tidak wajib.
 
@@ -61,11 +63,11 @@ Tabel berikut menjelaskan hubungan ruang dan keadaan yang wajib dibangun. P0 han
 | Bawah tengah | Nama alat aktif + ikon kecil + resource relevan | Alat lain muncul sementara ketika berganti, lalu diringkas |
 | Bawah samping | Notifikasi satu pesan | Tidak menutup prompt atau mengambil fokus |
 
-Tanpa resep: “Buka buku [B] untuk memilih masakan.” Bahan lengkap: “Bahan lengkap. Kembali ke dapur.” Saat job aktif: nama resep dan “Masakan dijeda”/“Sedang memasak”, bukan bahan yang mendadak nol. Resep selesai: centang dan aksi ambil/gunakan hasil; menutup pelacakan diperbolehkan.
+Pada P0.5 tracker tetap memuat satu resep yang dilacak; progres halaman distempel hanya ada di buku (UI09). Tanpa resep: “Buka buku [B] untuk memilih masakan.” Bahan lengkap: “Bahan lengkap. Kembali ke dapur.” Saat job aktif: nama resep dan “Masakan dijeda”/“Sedang memasak”, bukan bahan yang mendadak nol. Resep selesai: centang dan aksi ambil/gunakan hasil; menutup pelacakan diperbolehkan.
 
 ### UI02 — Buku resep
 
-P0 menggunakan satu halaman utama tanpa sidebar kosong: judul di atas, ilustrasi/catatan pendek di kiri, tiga bahan dan petunjuk sumber di kanan, tombol Lacak di bawah. Daftar resep baru dibutuhkan ketika ada lebih dari satu resep yang benar-benar tersedia.
+P0 menggunakan satu halaman utama tanpa sidebar kosong: judul di atas, ilustrasi/catatan pendek di kiri, tiga bahan dan petunjuk sumber di kanan, tombol Lacak di bawah. Daftar resep baru dibutuhkan ketika ada lebih dari satu resep yang benar-benar tersedia. Pada P0.5 ketiga resep warisan benar-benar tersedia: buku memuat satu halaman per resep dengan pemilih halaman sederhana, tetap satu resep dilacak (D17) dan tidak ada kartu kosong. Halaman 2 dan 3 hanya tampil penuh setelah ditemukan (UI09); layout tab atau tombol halaman perlu penyesuaian dari satu halaman P0.
 
 | Keadaan | Tampilan/aksi |
 | --- | --- |
@@ -74,6 +76,7 @@ P0 menggunakan satu halaman utama tanpa sidebar kosong: judul di atas, ilustrasi
 | Bahan cukup | Label “Siap dimasak”, bukan “Selesai” |
 | Sudah dimasak | Centang Selesai dan jumlah dibuat; boleh masak ulang |
 | Catatan ditemukan | Tombol Catatan membuka teks yang dapat dibaca ulang |
+| Sudah diserahkan (P0.5) | Stempel pada halaman; hidangan yang sama tidak dapat diserahkan dua kali |
 
 Petunjuk sumber dapat diperluas pada baris bahan yang dipilih. Pemain tidak diwajibkan berpindah ke tiga halaman berbeda untuk mengetahui lokasi bahan. Detail angka tanah tidak berada di buku resep.
 
@@ -134,6 +137,8 @@ Keluar jika keadaan berubah sejak checkpoint terakhir: Simpan dan Keluar / Kelua
 
 Panel bawah, nama tokoh, teks singkat, maksimal tiga pilihan terlihat sekaligus ditambah Tutup. Teks dapat dibaca ulang. Pilihan berbagi hanya aktif jika hidangan tersedia; teks menyebut jumlah dan sumber. E yang memulai dialog tidak sekaligus memilih pilihan pertama.
 
+P0.5: dialog bersumber dari data per warga dengan struktur yang sama (CONTENT bagian 18) sehingga delapan warga memakai panel yang sama; tujuh dialog tetangga P0 tetap identik. Pada penerima dengan hidangan yang sesuai di tas atau peti muncul “Serahkan [nama] — 1” (jumlah dan sumber disebut); hidangan yang bukan untuk warga itu tidak dikonsumsi dan mendapat jawaban penolakan halus. Warga yang sedang tidur menjawab “sudah tidur” tanpa efek, dengan tawaran titip hidangan bila relevan. Lawan bicara menghadap pemain selama dialog.
+
 Catatan lingkungan memakai panel sederhana dengan judul, isi dan Tutup; otomatis tercatat dalam buku setelah benar-benar diperiksa. Tidak ada cutscene yang memindahkan kamera secara paksa untuk catatan kecil.
 
 ### UI08 — Event tematik, usulan sesudah P0
@@ -141,6 +146,22 @@ Catatan lingkungan memakai panel sederhana dengan judul, isi dan Tutup; otomatis
 Format identitas: **Nama Game: Karhutla**. Nama kerja tetap Buku Resep 2045; Karhutla adalah nama event, bukan nama utama atau chapter. Pada pengalaman bermain, label event muncul singkat ketika aktivasi, kemudian informasi menyatu dengan tracker resep.
 
 Tracker hanya menampilkan satu kebutuhan situasional terdekat, misalnya “Akses kebun tertutup — periksa pos air”, dengan detail di buku. Jangan menambah dashboard bencana, feed berita langsung atau tiga meter sains. Event diperkenalkan pada satu panel konfirmasi dengan tujuan, perubahan wilayah dan kemampuan melanjutkan save. Rincian desain pada EVENT_DESIGN; seluruh UI event belum bagian implementasi P0.
+
+### UI09 — Progres warisan dan layar penutup (P0.5, USULAN BARU)
+
+Seluruhnya berada di buku dan tidak menambah HUD. Rincian teks ada di CONTENT bagian 18; perilaku di PROTOTYPE bagian 11.
+
+| Elemen | Isi dan aturan |
+| --- | --- |
+| Sampul | “Halaman distempel n/3”; awalnya 0/3 dengan kalimat nyata bahwa dua lembar lain terselip di buku. Tidak ada persen, bar atau penghitung lain |
+| Per halaman | Nama, bahan dengan angka dari aturan stok bebas yang sama dengan tracker, petunjuk sumber, catatan, penerima, tombol Lacak dan empat baris centang: Ditemukan, Bahan, Dimasak, Diserahkan |
+| Stempel | Muncul setelah hidangan diserahkan kepada penerima |
+| Layar penutup | Overlay modal satu kali setelah stempel ketiga: tiga stempel, tiga penerima, satu kalimat dari masing-masing, tombol Lanjutkan; tanpa skor, bintang atau waktu. Fokus kembali ke dunia dan input penutup tidak diteruskan sebagai aksi dunia |
+| Wireframe | Wireframe v0.2 hanya memuat buku satu halaman; tampilan tiga halaman belum bergambar dan mengikuti teks ini, tidak sebaliknya |
+
+### Navigasi dunia luas tanpa minimap (P0.5, USULAN)
+
+Tidak ada minimap, kompas atau panah arah di HUD (D32). Pemain menemukan sumber dari petunjuk sumber di halaman buku (deskripsi arah dan landmark), dari petunjuk warga (mis. Dik Rini) dan dari isyarat lingkungan: jalan, pagar, papan, siluet gunung dan sungai. Pemuatan chunk berlangsung di latar tanpa indikator; teks singkat hanya muncul bila penahan muat (load, pemulihan) benar-benar terlihat oleh pemain dan hilang sendiri. Default ini dipertahankan sampai playtest T83 menunjukkan perlunya perubahan; perubahan itu keputusan pemilik.
 
 ## 6. Notifikasi, feedback dan bantuan
 
@@ -154,4 +175,11 @@ Arah suara dan musik membantu suasana, tetapi informasi wajib tidak hanya disamp
 
 Penguji baru diberi tujuan “Buat satu masakan dari buku” dan kontrol dasar, kemudian diamati. Catat apakah ia menemukan buku, memahami sumber, menyiapkan petak, memilih alat, mengenali kebutuhan, memasak dan menggunakan hasil. Catat bantuan lisan yang terpaksa diberikan, bukan menutupinya sebagai keberhasilan mandiri.
 
-Jika bingung, perbaiki kata/penempatan/feedback terlebih dahulu sebelum menambah panel baru. Verifikasi teks panjang, skala besar, layar kecil, input keyboard, fokus setelah Esc, tas penuh dan save gagal. Nomor tes dan hasil yang diharapkan ada pada TEST_PLAN.
+Pada P0.5 amati juga apakah pemain menemukan tiga sumber warisan tanpa minimap, apakah ia menemukan penerima pada titik temu, dan apakah halaman buku serta tombol Serahkan dipahami tanpa arahan (T83–T85). Jika bingung, perbaiki kata/penempatan/feedback terlebih dahulu sebelum menambah panel baru. Verifikasi teks panjang, skala besar, layar kecil, input keyboard, fokus setelah Esc, tas penuh dan save gagal. Nomor tes dan hasil yang diharapkan ada pada TEST_PLAN.
+
+## 8. Riwayat perubahan
+
+| Versi | Tanggal | Perubahan |
+| --- | --- | --- |
+| 0.2 | 27 Oktober 2026 | UI, kontrol dan wireframe P0 |
+| 0.3 | 30 Oktober 2026 | SCOPE-001: Theme tunggal, buku tiga halaman, UI09 progres warisan dan layar penutup, dialog dan penyerahan warga, navigasi tanpa minimap, pengamatan P0.5; "tidak ada minimap" dan HUD ringkas tetap |

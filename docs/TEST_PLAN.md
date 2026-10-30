@@ -1,11 +1,11 @@
 # Rencana Pengujian dan Bukti Penerimaan
 
-**Versi:** 0.2 · **Tanggal:** 27 Oktober 2026  
+**Versi:** 0.3 · **Tanggal:** 30 Oktober 2026  
 **Acuan:** [PRD](../PRD.md), [CONTENT](CONTENT.md), [PROTOTYPE](PROTOTYPE.md), [TASKS](TASKS.md).
 
 ## 1. Keadaan saat paket diserahkan dan pembaruan verifikasi
 
-Pada saat paket dokumentasi diserahkan, semua tes **gameplay, build, performa, instalasi dan event di bawah BELUM DIJALANKAN**, karena kode game belum dibuat. Sejak itu, implementasi dan QA-001 telah menambahkan bukti otomatis. Pada 30 Oktober 2026, `godot_console.exe --headless --path "C:\Users\HP\Fauzi\Private Working\Project Labs\Game Indonesia" --script res://tests/test_runner.gd` dijalankan dengan hasil 8.854 asersi lulus, 0 gagal, exit code 0. Main scene juga berhasil dirender pada Godot 4.7.2 GUI.
+Pada saat paket dokumentasi diserahkan (27 Oktober 2026), semua tes yang tercantum saat itu **BELUM DIJALANKAN** karena kode game belum dibuat. Sejak itu implementasi P0 dan QA-001 menambahkan bukti otomatis: suite headless berada di `tests/` (26 suite terdaftar pada `tests/test_runner.gd` per 30 Oktober 2026) dan hasil pelaksanaannya tercatat di laporan task, bukan di tabel kasus. Pada 30 Oktober 2026, `godot_console.exe --headless --path "<folder-proyek>" --script res://tests/test_runner.gd` dijalankan dengan hasil 8.854 asersi lulus, 0 gagal, exit code 0. Main scene juga berhasil dirender pada Godot 4.7.2 GUI. Tabel kasus di bawah (T01–T90) adalah kontrak ekspektasi; kolom hasil faktual tidak diisi di sini. Kasus P0.5 (T61–T90, bagian 10) seluruhnya **BELUM DIJALANKAN**: belum ada kodenya, dan sesi agent berbasis cloud tidak memiliki Godot sehingga bukti run selalu berasal dari perangkat pemilik.
 
 Bukti otomatis tersebut tidak menggantikan playtest manual. Pada sesi DEMO-001, input keyboard/mouse dari otomasi desktop eksternal tidak diterima oleh window game; karena itu gerak, bidikan, interaksi target, navigasi panel dan keterbacaan saat dikendalikan pemain masih terbuka. Runner juga melaporkan 5.026 ObjectDB instance dan 14 resource masih digunakan saat exit; warning ini dicatat untuk investigasi, bukan diubah menjadi klaim lulus.
 
@@ -13,7 +13,7 @@ Rencana tes bukan bukti lulus. Setiap hasil pelaksanaan nanti harus memuat tangg
 
 ## 2. Jenis verifikasi dan tingkat masalah
 
-- **Otomatis:** hitungan, kapasitas, transaksi, state, timer deterministik dan persistensi. Dibuat saat sistem tersedia; tidak ada skrip tes game pada paket dokumentasi ini.
+- **Otomatis:** hitungan, kapasitas, transaksi, state, timer deterministik dan persistensi. Dibuat saat sistem tersedia; suite P0 sudah ada, suite P0.5 ditulis per task dan didaftarkan koordinator ke runner secara berurutan.
 - **Integrasi langsung:** interaksi objek, UI, collision, alur dapur, save dalam aplikasi dan error yang terlihat.
 - **Playtest:** pemahaman tujuan, kenyamanan kamera, navigasi, ritme dan rasa kegiatan.
 - **Distribusi:** build tanpa editor, offline, installer, hak akses dan lokasi save.
@@ -24,7 +24,7 @@ Masalah kritis: progres/item hilang atau duplikat, tidak bisa menyelesaikan rese
 
 Gunakan profil bersih sesuai CONTENT untuk alur utama. Fixture tes terpisah menyediakan: tas hampir penuh, tas/peti penuh, bahan terbagi, tanaman hampir siap, petak kering, nutrisi kurang, job pada tiap tahap, output/refund tertahan dan checkpoint rusak. Fixture tidak masuk sebagai cheat tersembunyi pada build rilis.
 
-Sebelum uji yang merusak save, salin profil pengujian; jangan menggunakan save pribadi pemain. Catat seed/setup bila ada pengacakan tambahan nanti. P0 sendiri tidak membutuhkan RNG untuk sumber wajib.
+Sebelum uji yang merusak save, salin profil pengujian; jangan menggunakan save pribadi pemain. Untuk P0.5, fixture save v1 dibuat dari alur QA-001 dan disimpan di `tests/fixtures/` (bukan save pribadi pemilik); salinan save asli pemilik hanya dipakai pada T81, tidak dimasukkan ke repositori dan tidak diubah. Catat seed/setup bila ada pengacakan tambahan nanti. P0 sendiri tidak membutuhkan RNG untuk sumber wajib.
 
 ## 4. Kasus uji P0
 
@@ -114,7 +114,13 @@ Kolom langkah mencakup kondisi awal dan tindakan inti. Hasil expected adalah kon
 | FR21 UI nyaman | T21, T51–T55, playtest |
 | FR22 distribusi | T20, T57–T60 |
 | FR23 error jujur | T05, T10, T17, T30, T47, T49 |
-| FR24 pelaporan agent | DOC-T01–DOC-T08 dan audit arsip setiap task |
+| FR24 pelaporan agent | DOC-T01–DOC-T12 dan audit arsip setiap task |
+| FR25 dunia chunk | T61–T64, T76, T78–T80, T90 |
+| FR26 aset CC0 | T71–T74, T82, T87 |
+| FR27 warga bergerak | T67, T68, T84 |
+| FR28 tiga resep warisan | T69, T70, T83, T85 |
+| FR29 save v2 | T65, T66, T81 |
+| FR30 performa dunia luas | T74, T78–T80, T89 |
 
 FR19/FR20 tidak menjadi tes kosong: sebelum implementasi tahap terkait, task desain harus menetapkan data resep/ending dan expected hasil. Tidak mengarang konten final sekarang untuk menampilkan tanda lengkap palsu.
 
@@ -127,6 +133,8 @@ Catat urutan lokasi, lama tiap tahap, jumlah bantuan, titik salah paham, menu ya
 Sasaran awal durasi 10–15 menit. Jika terlalu cepat/lama, identifikasi penyebab sebelum mengubah timer. Jika kebingungan berasal dari UI/rute, perbaiki itu; jangan menyelesaikan dengan menambah panel tutorial panjang. Lakukan lagi setelah perubahan yang relevan, bukan mengulang tes tanpa alasan.
 
 Jalankan satu playthrough dari profil bersih dan satu dari checkpoint tengah. P0 gameplay diterima jika seluruh tes kritis lulus, loop selesai, dan tidak ada kebutuhan bantuan berulang untuk tindakan dasar. Jumlah penguji dan temuan dilaporkan apa adanya.
+
+Untuk P0.5 sasaran 10–15 menit di atas tidak berlaku: instruksi penguji menjadi “Kumpulkan tiga resep dari buku, masak dan serahkan kepada penerimanya”, tanpa minimap, dengan target pengamatan tempo sesi di CONTENT bagian 15 (T83 dan T85). Catat urutan area, lama perjalanan, waktu tersasar, bantuan yang diberikan dan titik bingung; jangan menutup kebingungan dengan menambah panel tutorial atau HUD arah.
 
 ## 7. Pengujian event Karhutla — sesudah P0
 
@@ -159,11 +167,81 @@ Rincian mekanik dan angka bersifat USULAN BARU sampai EV-001. Semua kasus beriku
 | DOC-T06 | Status–arsip | Daftar selesai benar, laporan ada, status terakhir singkat, tidak mengklaim gameplay diuji |
 | DOC-T07 | Isi/format | Tidak ada bagian sengaja kosong, elipsis pemotongan, pagar kode tidak seimbang, nama file berbahaya atau tautan rusak |
 | DOC-T08 | Paket ZIP dan wireframe | ZIP dapat dibaca/diekstrak, byte file cocok, SVG valid dan layout diperiksa secara visual |
+| DOC-T09 | Tautan relatif dan ID setelah SCOPE-001 | Semua tautan relatif Markdown dan ID task, D, FR, T yang dirujuk terdefinisi; tidak ada rujukan ke ID yang tidak ada |
+| DOC-T10 | Keputusan D26–D32 | Tiap keputusan baru punya status dan tanggal; tidak ada D lama (D01–D25) terhapus; D13/D14/D19/D22 diberi tambahan bertanggal, bukan diganti diam-diam |
+| DOC-T11 | Angka tidak ganda | Angka dunia, chunk, anggaran dan ambang performa hanya di CONTENT; dokumen lain merujuk |
+| DOC-T12 | Task P0.5 tercatat | Tiap task P0.5 memiliki baris di TASKS, PROJECT_STATUS dan laporan setelah selesai; ID dan judul konsisten pada ketiganya |
 
-Hasil nyata audit berada pada [CONSISTENCY_CHECK](CONSISTENCY_CHECK.md), dengan penjabaran task di [laporan DOC-001](completed_tasks/001-paket-dokumentasi-v0-2.md).
+Hasil nyata audit DOC-T01–T08 berada pada bagian awal [CONSISTENCY_CHECK](CONSISTENCY_CHECK.md) dengan penjabaran di [laporan DOC-001](completed_tasks/001-paket-dokumentasi-v0-2.md); hasil DOC-T09–T12 berada pada bagian "Audit v0.3" di berkas yang sama.
 
 ## 9. Pencatatan hasil dan penutupan
 
 Gunakan laporan task selesai sebagai tempat hasil tes yang terkait. Untuk batch QA besar, lampiran hasil dapat dibuat dan ditautkan dari laporan. Catat tiap kasus: LULUS/GAGAL/BELUM DIJALANKAN/TIDAK BERLAKU disertai alasan; jangan memakai TIDAK BERLAKU untuk menutupi fitur wajib yang belum ada.
 
 Setelah masalah diperbaiki, jalankan reproduksi dan tes pada sistem yang berhubungan. Tes lebih luas dijalankan jika perubahan baru menimbulkan risiko lintas sistem. PROJECT_STATUS hanya menyimpan kesimpulan terakhir dan tautan laporan, bukan seluruh log 60 kasus.
+
+## 10. Kasus uji P0.5 "Kampung Hidup" — BELUM DIJALANKAN
+
+Penomoran melanjutkan T60. Jenis: **A** otomatis headless (dapat ditulis di sesi cloud, hanya dijalankan di mesin ber-Godot), **M** manual di Windows pemilik. Semua status awal **BELUM DIJALANKAN**. Ambang angka berada di [CONTENT](CONTENT.md) bagian 19–20, bukan di sini. Regresi P0 (T01–T60, termasuk T77 seluruh suite lama) adalah syarat tetap.
+
+### 10.1 Otomatis
+
+| ID | Jenis | Kondisi dan langkah | Hasil yang diharapkan |
+| --- | --- | --- | --- |
+| T61 | A | Konversi posisi dunia dan ID chunk, termasuk koordinat negatif dan batas tepat | Pemetaan deterministik dan bolak-balik konsisten |
+| T62 | A | Gerakkan posisi simulasi melintasi banyak chunk; periksa himpunan chunk aktif | Himpunan sesuai radius; tak ada chunk ganda; muat/bongkar idempoten |
+| T63 | A | Ubah sumber, petak dan pickup, bongkar lalu muat chunk | Status tetap; tidak ada panen ganda atau reset |
+| T64 | A | Semua ID lokasi P0 (LEVEL_DESIGN bagian 2) dan ID baru | Ada, unik global, koordinat zona inti tak berubah |
+| T65 | A | Fixture save v1, muat dengan migrasi, simpan v2, muat | Seluruh state P0 sama; cadangan v1 tidak ditimpa |
+| T66 | A | Save v2 rusak, versi lebih baru, ID tak dikenal | Ditolak dengan alasan; dunia lama tidak diganti |
+| T67 | A | Maju waktu simulasi; pause; save/load | Warga maju hanya saat simulasi berjalan; posisi dan jadwal pulih |
+| T68 | A | Graf waypoint dan validasi data semua jadwal warga | Semua titik jadwal terhubung dan terjangkau; tak ada titik di collision; batas jalur dan satu blok bicara per warga terpenuhi (CONTENT bagian 17) |
+| T69 | A | Selesaikan tiga resep berurutan dan berulang, termasuk semua enam permutasi urutan | Tiap resep tercatat sekali; penutup tujuan sekali; ulangan tidak memberi hadiah ganda; state akhir identik |
+| T70 | A | Bahan tumpang tindih antar-resep; reservasi | Tracker dan dapur memakai total sama; tak ada hitung ganda (regresi T11/T12) |
+| T71 | A | Pindai folder aset pihak ketiga terhadap manifes | Setiap berkas punya entri; lisensi CC0; hash cocok; tak ada berkas yatim |
+| T72 | A | Pindai rujukan `res://` di skrip dan scene | Semua resolvable; tak ada aset hilang |
+| T73 | A | Generator dengan seed sama dua kali | Keluaran identik (jumlah vertex atau hash) |
+| T74 | A | Hitung node, instance MultiMesh dan material per chunk | Di bawah anggaran CONTENT bagian 20; bukan klaim FPS |
+| T75 | A | Cari definisi durasi ganda (masak, persiapan, tumbuh, panjang hari) | Satu sumber per nilai; perilaku tak berubah (regresi T34/T37/T41) |
+| T76 | A | 50 siklus buat/bebaskan chunk dan warga | Jumlah objek kembali ke baseline; tanpa node yatim baru |
+| T77 | A | Jalankan seluruh suite P0 | Lulus; jumlah asersi dilaporkan dan tidak berkurang tanpa alasan tertulis |
+
+### 10.2 Manual di Windows pemilik
+
+Catat tiap kali: tanggal, build/commit, Godot 4.7.2 dan renderer, CPU/GPU/RAM, driver, resolusi, mode layar, kualitas, rute. Metrik: FPS rata-rata, 1% terendah, frame time maksimum (monitor Godot), memori awal/akhir.
+
+| ID | Jenis | Kondisi dan langkah | Hasil yang diharapkan |
+| --- | --- | --- | --- |
+| T78 | M | Rute standar tepi ke tepi dunia, tiga kali | FPS dan frame time dicatat; memenuhi ambang CONTENT bagian 20 atau dilaporkan jujur |
+| T79 | M | 20 lintasan batas chunk pada kecepatan jalan | Ambang hitch CONTENT bagian 20 terpenuhi; maksimum dilaporkan |
+| T80 | M | Berjalan 30 menit lalu keluar | Pertumbuhan memori dan ObjectDB saat exit memenuhi CONTENT bagian 20 terhadap baseline TEST_PLAN bagian 1 |
+| T81 | M | Salinan save v1 asli pemilik, lalu Lanjutkan | Termigrasi, posisi aman, state sama; save asli tidak rusak |
+| T82 | M | Lihat jagung, temu kunci, bayam dan rumah dari jarak interaksi dan jarak jauh | Sumber wajib dikenali tanpa ikon saja; rumah tetap landmark |
+| T83 | M | Pemain baru mencari tiga sumber warisan tanpa minimap | Berhasil; bantuan dan waktu tersasar tercatat |
+| T84 | M | Amati warga bergerak dan ajak bicara | Tidak menembus atau menjebak; dialog tak mengunci sumber; terasa wajar; tidak ada pop-in mengganggu |
+| T85 | M | Playthrough tiga resep dari profil bersih dan dari save tengah | Selesai; durasi dan titik bingung dicatat |
+| T86 | M | FOV 60/80/100 di lingkungan baru | Tanpa ketidaknyamanan berat; UI tak terpotong |
+| T87 | M | Periksa kredit dan atribusi pada build | Sesuai manifes |
+| T88 | M | WASD dan mouse langsung di window game (tertunda DEMO-001) | Gerak, bidik, E, panel berfungsi |
+| T89 | M | 1280 × 720 dan 1920 × 1080, jendela dan layar penuh | Tata letak dan kinerja dicatat |
+| T90 | M | Berjalan ke tepi dunia | Batas terbaca; recovery tidak mengubah item |
+
+### 10.3 Titik cek manusia
+
+Pemilik menjalankan game di Windows dan melaporkan hasil mentah; agent tidak menafsirkan “tidak ada error” sebagai kenyamanan.
+
+| Titik | Setelah | Yang dijalankan |
+| --- | --- | --- |
+| H1 | Gelombang pertama | Runner headless (T77) dan T88 (DEMO-001); lapor jumlah asersi |
+| H2 | VIS-001 | Pemandangan uji generator; tangkapan layar dibuat dan dilampirkan pemilik |
+| H3 | WORLD-002 dan WORLD-003 | T78–T80 awal: FPS, hitch, memori sebelum konten visual berat |
+| H4 | GOAL-001b/c dan WORLD-005 | T83 dan T84 awal, playtest tiga resep |
+| H5 | Pertama kali aset impor tersedia | Impor aset di editor sekali dan periksa manifes |
+| H6 | SAVE-002 dan QA-002 | T81 dengan salinan save asli (setelah SAVE-002); T78–T90 penuh dan playtest (setelah QA-002) |
+
+## 11. Riwayat perubahan
+
+| Versi | Tanggal | Perubahan |
+| --- | --- | --- |
+| 0.2 | 27 Oktober 2026 | Rencana uji P0 dan event |
+| 0.3 | 30 Oktober 2026 | SCOPE-001: perbarui bagian 1 (keadaan nyata, path lokal diganti `<folder-proyek>`), bagian 3 (fixture v1), matriks FR25–FR30, playtest P0.5, DOC-T09–T12, bagian 10 (T61–T90 dan titik cek H1–H6) |
