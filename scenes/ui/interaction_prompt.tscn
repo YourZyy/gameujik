@@ -1,0 +1,58 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/interaction_prompt.gd" id="1_fhyea"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cagcq"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.08, 0.08, 0.08, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="InteractionPrompt" type="CanvasLayer" unique_id=61957213]
+script = ExtResource("1_fhyea")
+
+[node name="RootControl" type="Control" parent="." unique_id=1047380907]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Reticle" type="ColorRect" parent="RootControl" unique_id=1914224497]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.85)
+
+[node name="PromptPanel" type="PanelContainer" parent="RootControl" unique_id=1887352963]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 36.0
+offset_right = 60.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cagcq")
+
+[node name="PromptLabel" type="Label" parent="RootControl/PromptPanel" unique_id=1635757090]
+layout_mode = 2
+text = "[E] Interaksi"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1990" viewBox="0 0 1920 1990"><title>Wireframe Buku Resep 2045 v0.2</title><desc>Enam layar rancangan UI sederhana untuk prototipe first person. Bukan screenshot game. Event Karhutla dirancang sesudah P0.</desc>
+<rect x="0" y="0" width="1920" height="1990" rx="0" fill="#E9EBDD"/>
+<text x="64" y="60" font-family="DejaVu Sans, sans-serif" font-size="36" font-weight="700" fill="#24312E">BUKU RESEP 2045</text>
+<text x="64" y="98" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#526058">WIREFRAME v0.2  /  27 OKTOBER 2026  /  RANCANGAN, BUKAN SCREENSHOT GAME</text>
+<rect x="64" y="134" width="872" height="572" rx="16" fill="#FBFAF5"/>
+<text x="84" y="165" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#24312E">01  HUD eksplorasi</text>
+<g transform="translate(80,182)">
+<rect x="0" y="0" width="840" height="472" rx="0" fill="#C8D5CA"/>
+<path d="M0 192 L110 140 L245 200 L340 128 L480 200 L610 156 L840 201 L840 472 L0 472 Z" fill="#91A08B"/>
+<path d="M0 270 L190 244 L420 296 L670 230 L840 265 L840 472 L0 472 Z" fill="#718467"/>
+<path d="M840 472 L475 472 L390 285 L430 285 Z" fill="#C6AD88"/>
+<rect x="520" y="174" width="230" height="164" rx="0" fill="#D4C5A1"/>
+<path d="M489 181 L632 108 L779 181 Z" fill="#AB6748"/>
+<rect x="607" y="224" width="55" height="114" rx="0" fill="#4E5D50"/>
+<rect x="545" y="213" width="39" height="40" rx="0" fill="#627C76"/>
+<rect x="64" y="217" width="10" height="120" rx="0" fill="#647454"/>
+<path d="M34 235 L69 130 L104 235 Z" fill="#58704E"/>
+<rect x="102" y="217" width="10" height="120" rx="0" fill="#647454"/>
+<path d="M72 235 L107 130 L142 235 Z" fill="#58704E"/>
+<rect x="140" y="217" width="10" height="120" rx="0" fill="#647454"/>
+<path d="M110 235 L145 130 L180 235 Z" fill="#58704E"/>
+<path d="M150 370 L338 351 L389 413 L190 435 Z" fill="#795540"/>
+<path d="M202 386 Q177 341 198 366 Q216 331 220 368 Z" fill="#91A86C"/>
+<path d="M269 378 Q244 333 265 358 Q283 323 287 360 Z" fill="#91A86C"/>
+<path d="M239 410 Q214 365 235 390 Q253 355 257 392 Z" fill="#91A86C"/>
+<path d="M313 402 Q288 357 309 382 Q327 347 331 384 Z" fill="#91A86C"/>
+<rect x="20" y="20" width="295" height="166" rx="10" fill="#24312E"/>
+<text x="38" y="46" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="700" fill="#D8D6BE">RESEP DILACAK</text>
+<text x="38" y="72" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700" fill="#F5F0E4">Sayur Bening</text>
+<text x="38" y="94" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="700" fill="#F5F0E4">Bayam dan Jagung</text>
+<text x="38" y="123" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#F5F0E4">Bayam 2/3   Jagung 1/1</text>
+<text x="38" y="145" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#F5F0E4">Temu kunci 1/1</text>
+<text x="38" y="174" font-family="DejaVu Sans, sans-serif" font-size="12" font-weight="400" fill="#D8D6BE">Termasuk stok rumah</text>
+<line x1="414" y1="236" x2="426" y2="236" stroke="#FFFFFF" stroke-width="2"/>
+<line x1="420" y1="230" x2="420" y2="242" stroke="#FFFFFF" stroke-width="2"/>
+<rect x="274" y="305" width="292" height="40" rx="8" fill="#24312E"/>
+<text x="293" y="331" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#F5F0E4">[E] Periksa petak kebun</text>
+<rect x="285" y="415" width="270" height="38" rx="8" fill="#24312E"/>
+<text x="303" y="440" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#F5F0E4">Penyiram · Air 8/10</text>
+</g>
+<text x="84" y="686" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#526058">Satu tujuan, satu prompt, satu alat aktif. Detail dibuka saat diperlukan.</text>
+<rect x="984" y="134" width="872" height="572" rx="16" fill="#FBFAF5"/>
+<text x="1004" y="165" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#24312E">02  Buku resep</text>
+<g transform="translate(1000,182)">
+<rect x="0" y="0" width="840" height="472" rx="0" fill="#D5D7C8"/>
+<rect x="20" y="16" width="800" height="440" rx="12" fill="#F1E7CC"/>
+<text x="42" y="49" font-family="DejaVu Sans, sans-serif" font-size="15" font-weight="700" fill="#24312E">BUKU RESEP KELUARGA</text>
+<text x="725" y="49" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#24312E">[B] Tutup</text>
+<line x1="420" y1="71" x2="420" y2="430" stroke="#C6B791" stroke-width="2"/>
+<text x="42" y="95" font-family="DejaVu Sans, sans-serif" font-size="29" font-weight="700" fill="#24312E">Sayur Bening</text>
+<text x="42" y="126" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="700" fill="#24312E">Bayam dan Jagung</text>
+<rect x="65" y="151" width="305" height="119" rx="12" fill="#DFD3B3"/>
+<ellipse cx="218" cy="222" rx="97" ry="32" fill="#58704E"/>
+<ellipse cx="218" cy="213" rx="97" ry="23" fill="#B8CB92"/>
+<circle cx="180" cy="211" r="12" fill="#E1B666"/>
+<circle cx="223" cy="211" r="12" fill="#E1B666"/>
+<circle cx="260" cy="211" r="12" fill="#E1B666"/>
+<text x="45" y="306" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#24312E">“Tanam yang dekat rumah,</text>
+<text x="45" y="334" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#24312E">cari yang masih tersisa.”</text>
+<text x="45" y="382" font-family="DejaVu Sans, sans-serif" font-size="15" font-weight="400" fill="#526058">Catatan sumber ada di tiap bahan.</text>
+<rect x="45" y="399" width="156" height="38" rx="8" fill="#58704E"/>
+<text x="59" y="424" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#F5F0E4">Buka catatan</text>
+<text x="447" y="95" font-family="DejaVu Sans, sans-serif" font-size="15" font-weight="700" fill="#24312E">KEBUTUHAN BAHAN</text>
+<rect x="444" y="107" width="351" height="41" rx="7" fill="#E5DDC3"/>
+<text x="458" y="134" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="400" fill="#24312E">Bayam</text>
+<text x="734" y="134" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="700" fill="#24312E">2/3</text>
+<rect x="444" y="157" width="351" height="41" rx="7" fill="#E5DDC3"/>
+<text x="458" y="184" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="400" fill="#24312E">Jagung</text>
+<text x="734" y="184" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="700" fill="#24312E">1/1</text>
+<rect x="444" y="207" width="351" height="41" rx="7" fill="#E5DDC3"/>
+<text x="458" y="234" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="400" fill="#24312E">Temu kunci</text>
+<text x="734" y="234" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="700" fill="#24312E">1/1</text>
+<text x="451" y="279" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="400" fill="#24312E">Bayam: benih di dekat alat.</text>
+<text x="451" y="307" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="400" fill="#24312E">Siapkan petak pekarangan.</text>
+<text x="451" y="348" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#526058">Termasuk stok rumah.</text>
+<rect x="449" y="390" width="346" height="38" rx="8" fill="#58704E"/>
+<text x="463" y="415" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#F5F0E4">Lacak resep</text>
+</g>
+<text x="1004" y="686" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#526058">Satu halaman resep yang tersedia. Tidak ada kartu konten kosong.</text>
+<rect x="64" y="738" width="872" height="572" rx="16" fill="#FBFAF5"/>
+<text x="84" y="769" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#24312E">03  Perawatan kebun</text>
+<g transform="translate(80,786)">
+<rect x="0" y="0" width="840" height="472" rx="0" fill="#C8D5CA"/>
+<path d="M0 192 L110 140 L245 200 L340 128 L480 200 L610 156 L840 201 L840 472 L0 472 Z" fill="#91A08B"/>
+<path d="M0 270 L190 244 L420 296 L670 230 L840 265 L840 472 L0 472 Z" fill="#718467"/>
+<path d="M840 472 L475 472 L390 285 L430 285 Z" fill="#C6AD88"/>
+<rect x="520" y="174" width="230" height="164" rx="0" fill="#D4C5A1"/>
+<path d="M489 181 L632 108 L779 181 Z" fill="#AB6748"/>
+<rect x="607" y="224" width="55" height="114" rx="0" fill="#4E5D50"/>
+<rect x="545" y="213" width="39" height="40" rx="0" fill="#627C76"/>
+<rect x="64" y="217" width="10" height="120" rx="0" fill="#647454"/>
+<path d="M34 235 L69 130 L104 235 Z" fill="#58704E"/>
+<rect x="102" y="217" width="10" height="120" rx="0" fill="#647454"/>
+<path d="M72 235 L107 130 L142 235 Z" fill="#58704E"/>
+<rect x="140" y="217" width="10" height="120" rx="0" fill="#647454"/>
+<path d="M110 235 L145 130 L180 235 Z" fill="#58704E"/>
+<path d="M150 370 L338 351 L389 413 L190 435 Z" fill="#795540"/>
+<path d="M202 386 Q177 341 198 366 Q216 331 220 368 Z" fill="#91A86C"/>
+<path d="M269 378 Q244 333 265 358 Q283 323 287 360 Z" fill="#91A86C"/>
+<path d="M239 410 Q214 365 235 390 Q253 355 257 392 Z" fill="#91A86C"/>
+<path d="M313 402 Q288 357 309 382 Q327 347 331 384 Z" fill="#91A86C"/>
+<rect x="492" y="22" width="326" height="232" rx="11" fill="#24312E"/>
+<text x="512" y="54" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700" fill="#F5F0E4">PETAK PEKARANGAN</text>
+<text x="512" y="90" font-family="DejaVu Sans, sans-serif" font-size="25" font-weight="700" fill="#F5F0E4">Tumbuh</text>
+<text x="512" y="124" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#F5F0E4">Air: Kering</text>
+<text x="512" y="153" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#F5F0E4">Nutrisi: Cukup</text>
+<text x="512" y="188" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="400" fill="#D8D6BE">Pertumbuhan dijeda.</text>
+<text x="512" y="219" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="400" fill="#D8D6BE">Siram seluruh petak.</text>
+<path d="M150 370 L338 351 L389 413 L190 435 Z" fill="none" stroke="#F4E8AC" stroke-width="2"/>
+<rect x="210" y="290" width="420" height="61" rx="10" fill="#24312E"/>
+<text x="232" y="315" font-family="DejaVu Sans, sans-serif" font-size="19" font-weight="600" fill="#F5F0E4">[Tahan klik kiri] Siram petak</text>
+<text x="232" y="340" font-family="DejaVu Sans, sans-serif" font-size="15" font-weight="400" fill="#D8D6BE">Biaya 2 air · berlaku untuk seluruh area</text>
+<rect x="285" y="415" width="270" height="38" rx="8" fill="#24312E"/>
+<text x="303" y="440" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#F5F0E4">Penyiram · Air 10/10</text>
+</g>
+<text x="84" y="1290" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#526058">Tanam per titik. Pupuk dan air per petak. Status memakai kata sederhana.</text>
+<rect x="984" y="738" width="872" height="572" rx="16" fill="#FBFAF5"/>
+<text x="1004" y="769" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#24312E">04  Tas dan penyimpanan</text>
+<g transform="translate(1000,786)">
+<rect x="0" y="0" width="840" height="472" rx="0" fill="#D0D6C9"/>
+<rect x="20" y="18" width="800" height="435" rx="12" fill="#F5F0E4"/>
+<text x="42" y="53" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#24312E">TAS &amp; PENYIMPANAN</text>
+<text x="715" y="53" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#24312E">[Esc] Tutup</text>
+<text x="45" y="99" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700" fill="#24312E">TAS · 3/12 slot</text>
+<text x="437" y="99" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700" fill="#24312E">RUMAH · 1/12 slot</text>
+<rect x="45" y="119" width="355" height="43" rx="8" fill="#E4E6D8" stroke="#A7B596"/>
+<text x="60" y="147" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#24312E">Bayam</text>
+<text x="357" y="147" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700" fill="#24312E">2</text>
+<rect x="45" y="170" width="355" height="43" rx="8" fill="#E4E6D8"/>
+<text x="60" y="198" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#24312E">Jagung</text>
+<text x="357" y="198" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700" fill="#24312E">1</text>
+<rect x="45" y="221" width="355" height="43" rx="8" fill="#E4E6D8"/>
+<text x="60" y="249" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#24312E">Benih bayam</text>
+<text x="357" y="249" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700" fill="#24312E">4</text>
+<rect x="437" y="119" width="355" height="43" rx="8" fill="#E4E6D8"/>
+<text x="452" y="147" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#24312E">Temu kunci</text>
+<text x="749" y="147" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700" fill="#24312E">1</text>
+<line x1="420" y1="82" x2="420" y2="303" stroke="#C9CEBC" stroke-width="2"/>
+<rect x="42" y="313" width="756" height="57" rx="8" fill="#E5DDC3"/>
+<text x="58" y="339" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="600" fill="#24312E">Bayam — bahan masakan</text>
+<text x="58" y="360" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#24312E">Jumlah di tas: 2. Dipakai untuk Sayur Bening.</text>
+<rect x="43" y="392" width="260" height="38" rx="8" fill="#58704E"/>
+<text x="57" y="417" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#F5F0E4">Pindahkan pilihan →</text>
+<rect x="323" y="392" width="245" height="38" rx="8" fill="#58704E"/>
+<text x="337" y="417" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#F5F0E4">Pindahkan semua →</text>
+</g>
+<text x="1004" y="1290" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#526058">Nama dan jumlah terlihat. Transfer tombol; drag-and-drop tidak wajib.</text>
+<rect x="64" y="1342" width="872" height="572" rx="16" fill="#FBFAF5"/>
+<text x="84" y="1373" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#24312E">05  Dapur dan memasak</text>
+<g transform="translate(80,1390)">
+<rect x="0" y="0" width="840" height="472" rx="0" fill="#C8C4B1"/>
+<rect x="20" y="18" width="800" height="435" rx="12" fill="#F5F0E4"/>
+<text x="42" y="53" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#24312E">DAPUR</text>
+<text x="718" y="53" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#24312E">[Esc] Jeda</text>
+<text x="43" y="93" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="700" fill="#24312E">Sayur Bening Bayam dan Jagung</text>
+<rect x="42" y="120" width="242" height="277" rx="10" fill="#E7E6D7"/>
+<text x="58" y="151" font-family="DejaVu Sans, sans-serif" font-size="15" font-weight="700" fill="#24312E">BAHAN DISIAPKAN</text>
+<text x="58" y="188" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#24312E">Bayam · 3</text>
+<text x="58" y="223" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#24312E">Jagung · 1</text>
+<text x="58" y="258" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#24312E">Temu kunci · 1</text>
+<text x="58" y="313" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="400" fill="#24312E">Air dapur: cukup</text>
+<text x="58" y="344" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="400" fill="#24312E">Bahan bakar: cukup</text>
+<text x="312" y="146" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="700" fill="#24312E">TAHAP 2/2 · MEMASAK</text>
+<text x="312" y="185" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="600" fill="#24312E">Pertahankan panas Sedang.</text>
+<rect x="313" y="219" width="465" height="24" rx="12" fill="#D8DBCF"/>
+<rect x="313" y="219" width="275" height="24" rx="12" fill="#91A86C"/>
+<text x="313" y="273" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="400" fill="#24312E">Proses berjalan. Satu panci, satu hasil.</text>
+<rect x="313" y="305" width="140" height="38" rx="8" fill="#D9D8CF"/>
+<text x="327" y="330" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#526058">Rendah</text>
+<rect x="471" y="305" width="140" height="38" rx="8" fill="#58704E"/>
+<text x="485" y="330" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#F5F0E4">Sedang</text>
+<rect x="629" y="305" width="149" height="38" rx="8" fill="#D9D8CF"/>
+<text x="643" y="330" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#526058">Tinggi</text>
+<text x="313" y="384" font-family="DejaVu Sans, sans-serif" font-size="15" font-weight="400" fill="#526058">Menutup panel akan menjeda masakan.</text>
+<text x="313" y="412" font-family="DejaVu Sans, sans-serif" font-size="15" font-weight="400" fill="#526058">Hasil tetap di dapur jika tas penuh.</text>
+</g>
+<text x="84" y="1894" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#526058">Satu tahap aktif. Bahan disiapkan; output aman meski tas penuh.</text>
+<rect x="984" y="1342" width="872" height="572" rx="16" fill="#FBFAF5"/>
+<text x="1004" y="1373" font-family="DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#24312E">06  Pause dan pengaturan</text>
+<g transform="translate(1000,1390)">
+<rect x="0" y="0" width="840" height="472" rx="0" fill="#C8D5CA"/>
+<path d="M0 192 L110 140 L245 200 L340 128 L480 200 L610 156 L840 201 L840 472 L0 472 Z" fill="#91A08B"/>
+<path d="M0 270 L190 244 L420 296 L670 230 L840 265 L840 472 L0 472 Z" fill="#718467"/>
+<path d="M840 472 L475 472 L390 285 L430 285 Z" fill="#C6AD88"/>
+<rect x="520" y="174" width="230" height="164" rx="0" fill="#D4C5A1"/>
+<path d="M489 181 L632 108 L779 181 Z" fill="#AB6748"/>
+<rect x="607" y="224" width="55" height="114" rx="0" fill="#4E5D50"/>
+<rect x="545" y="213" width="39" height="40" rx="0" fill="#627C76"/>
+<rect x="64" y="217" width="10" height="120" rx="0" fill="#647454"/>
+<path d="M34 235 L69 130 L104 235 Z" fill="#58704E"/>
+<rect x="102" y="217" width="10" height="120" rx="0" fill="#647454"/>
+<path d="M72 235 L107 130 L142 235 Z" fill="#58704E"/>
+<rect x="140" y="217" width="10" height="120" rx="0" fill="#647454"/>
+<path d="M110 235 L145 130 L180 235 Z" fill="#58704E"/>
+<path d="M150 370 L338 351 L389 413 L190 435 Z" fill="#795540"/>
+<path d="M202 386 Q177 341 198 366 Q216 331 220 368 Z" fill="#91A86C"/>
+<path d="M269 378 Q244 333 265 358 Q283 323 287 360 Z" fill="#91A86C"/>
+<path d="M239 410 Q214 365 235 390 Q253 355 257 392 Z" fill="#91A86C"/>
+<path d="M313 402 Q288 357 309 382 Q327 347 331 384 Z" fill="#91A86C"/>
+<rect x="0" y="0" width="840" height="472" rx="0" fill="#24312E"/>
+<text x="44" y="52" font-family="DejaVu Sans, sans-serif" font-size="29" font-weight="700" fill="#F5F0E4">PAUSE</text>
+<text x="44" y="90" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="400" fill="#D8D6BE">Progres aman saat menu terbuka.</text>
+<rect x="45" y="110" width="270" height="38" rx="8" fill="#58704E"/>
+<text x="59" y="135" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#F5F0E4">Lanjutkan</text>
+<rect x="45" y="154" width="270" height="38" rx="8" fill="#D9D8CF"/>
+<text x="59" y="179" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#526058">Simpan</text>
+<rect x="45" y="198" width="270" height="38" rx="8" fill="#D9D8CF"/>
+<text x="59" y="223" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#526058">Muat</text>
+<rect x="45" y="242" width="270" height="38" rx="8" fill="#D9D8CF"/>
+<text x="59" y="267" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#526058">Pengaturan</text>
+<rect x="45" y="286" width="270" height="38" rx="8" fill="#D9D8CF"/>
+<text x="59" y="311" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#526058">Kembali ke posisi aman</text>
+<rect x="45" y="330" width="270" height="38" rx="8" fill="#D9D8CF"/>
+<text x="59" y="355" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#526058">Menu utama</text>
+<rect x="45" y="374" width="270" height="38" rx="8" fill="#D9D8CF"/>
+<text x="59" y="399" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="600" fill="#526058">Keluar</text>
+<rect x="354" y="31" width="463" height="410" rx="12" fill="#F5F0E4"/>
+<text x="376" y="68" font-family="DejaVu Sans, sans-serif" font-size="21" font-weight="700" fill="#24312E">Contoh halaman Pengaturan</text>
+<text x="377" y="114" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#24312E">Sensitivitas</text>
+<text x="725" y="114" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#24312E">1,0×</text>
+<rect x="377" y="126" width="363" height="6" rx="3" fill="#D1D7C4"/>
+<rect x="377" y="126" width="230" height="6" rx="3" fill="#58704E"/>
+<text x="377" y="171" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#24312E">FOV</text>
+<text x="725" y="171" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#24312E">80°</text>
+<rect x="377" y="183" width="363" height="6" rx="3" fill="#D1D7C4"/>
+<rect x="377" y="183" width="230" height="6" rx="3" fill="#58704E"/>
+<text x="377" y="228" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#24312E">Skala UI</text>
+<text x="725" y="228" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#24312E">125%</text>
+<rect x="377" y="240" width="363" height="6" rx="3" fill="#D1D7C4"/>
+<rect x="377" y="240" width="230" height="6" rx="3" fill="#58704E"/>
+<text x="377" y="285" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#24312E">Volume efek</text>
+<text x="725" y="285" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#24312E">70%</text>
+<rect x="377" y="297" width="363" height="6" rx="3" fill="#D1D7C4"/>
+<rect x="377" y="297" width="230" height="6" rx="3" fill="#58704E"/>
+<text x="377" y="356" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#24312E">Head bob: Mati</text>
+<text x="377" y="390" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="400" fill="#24312E">Teks informasi: Aktif</text>
+<text x="377" y="421" font-family="DejaVu Sans, sans-serif" font-size="13" font-weight="400" fill="#526058">Subhalaman dibuka dari Pengaturan.</text>
+</g>
+<text x="1004" y="1894" font-family="DejaVu Sans, sans-serif" font-size="14" font-weight="400" fill="#526058">Pengaturan adalah subhalaman. Semua menu umum menghentikan simulasi.</text>
+<text x="64" y="1960" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="400" fill="#526058">ACUAN PERILAKU: docs/UI_UX.md    •    ACUAN ANGKA: docs/CONTENT.md    •    EVENT: Nama Game: Karhutla (sesudah P0)</text>
+</svg>

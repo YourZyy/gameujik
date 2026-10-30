@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1_dovo2"]
+[ext_resource type="Script" path="res://scripts/interaction/interaction_detector.gd" id="2_gmlin"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lvxji"]
+radius = 0.4
+height = 1.8
+
+[node name="Player" type="CharacterBody3D" unique_id=375045244]
+collision_layer = 2
+collision_mask = 13
+floor_constant_speed = true
+floor_snap_length = 0.2
+script = ExtResource("1_dovo2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=635675596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_lvxji")
+
+[node name="Head" type="Node3D" parent="." unique_id=941375977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1644379019]
+current = true
+fov = 80.0
+
+[node name="InteractionDetector" type="RayCast3D" parent="Head/Camera3D" unique_id=1659542892]
+target_position = Vector3(0, 0, -2)
+collision_mask = 5
+collide_with_areas = true
+script = ExtResource("2_gmlin")

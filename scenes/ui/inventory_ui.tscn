@@ -1,0 +1,318 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/inventory_ui.gd" id="1_4ycse"]
+[ext_resource type="Script" path="res://scripts/ui/inventory_slot_ui.gd" id="2_drsq2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nuief"]
+bg_color = Color(0.12, 0.14, 0.18, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.32, 0.4, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="InventoryUI" type="CanvasLayer" unique_id=57633674]
+layer = 10
+script = ExtResource("1_4ycse")
+
+[node name="RootControl" type="Control" parent="." unique_id=1645547679]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DimBackground" type="ColorRect" parent="RootControl" unique_id=1123616584]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.05, 0.08, 0.7)
+
+[node name="CenterContainer" type="CenterContainer" parent="RootControl" unique_id=1244483987]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MainPanel" type="PanelContainer" parent="RootControl/CenterContainer" unique_id=700284651]
+custom_minimum_size = Vector2(880, 540)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nuief")
+
+[node name="Margin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel" unique_id=1259734987]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin" unique_id=2129732043]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HeaderHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=1637429467]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/HeaderHBox" unique_id=2122465168]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "INVENTARIS & PENYIMPANAN"
+
+[node name="HeaderSpacer" type="Control" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/HeaderHBox" unique_id=846161347]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/HeaderHBox" unique_id=831712327]
+custom_minimum_size = Vector2(140, 36)
+layout_mode = 2
+text = "Tutup [Esc / Tab]"
+
+[node name="ContentHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=1267167609]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="BackpackSection" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox" unique_id=1586173584]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+
+[node name="SectionHeader" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection" unique_id=2027066049]
+layout_mode = 2
+
+[node name="BackpackTitle" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/SectionHeader" unique_id=1488606138]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Tas Punggung"
+
+[node name="Spacer" type="Control" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/SectionHeader" unique_id=226973677]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackpackCapacityLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/SectionHeader" unique_id=1575892018]
+layout_mode = 2
+text = "0/12 slot"
+
+[node name="BackpackGrid" type="GridContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection" unique_id=345785932]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4
+
+[node name="Slot_0" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=1289560623]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_1" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=148546973]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_2" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=1005205103]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_3" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=1387496142]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_4" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=666584407]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_5" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=1571003746]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_6" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=613002218]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_7" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=433478429]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_8" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=1365675837]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_9" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=416772407]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_10" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=1079215774]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_11" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackGrid" unique_id=354726759]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="BackpackActions" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection" unique_id=107532957]
+layout_mode = 2
+
+[node name="BtnTransferSelectedToStorage" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackActions" unique_id=622949507]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pindahkan Pilihan ->"
+
+[node name="BtnTransferAllToStorage" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/BackpackSection/BackpackActions" unique_id=29718557]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pindahkan Semua ->"
+
+[node name="StorageSection" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox" unique_id=1130249612]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+
+[node name="SectionHeader" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection" unique_id=194858762]
+layout_mode = 2
+
+[node name="StorageTitle" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/SectionHeader" unique_id=950710952]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Peti Penyimpanan"
+
+[node name="Spacer" type="Control" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/SectionHeader" unique_id=2125842105]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StorageCapacityLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/SectionHeader" unique_id=871694144]
+layout_mode = 2
+text = "0/12 slot"
+
+[node name="StorageGrid" type="GridContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection" unique_id=396895539]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4
+
+[node name="Slot_0" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=499019347]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_1" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=94261207]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_2" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=76104435]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_3" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=777047894]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_4" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=1713351749]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_5" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=979332266]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_6" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=1163718546]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_7" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=1591436928]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_8" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=633108788]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_9" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=133343092]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_10" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=647513006]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="Slot_11" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageGrid" unique_id=1899508396]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_drsq2")
+
+[node name="StorageActions" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection" unique_id=836029487]
+layout_mode = 2
+
+[node name="BtnTransferSelectedToBackpack" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageActions" unique_id=563174417]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<- Pindahkan Pilihan"
+
+[node name="BtnTransferAllToBackpack" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/StorageSection/StorageActions" unique_id=1555260823]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<- Pindahkan Semua"
+
+[node name="DetailPanel" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=1788690211]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="DetailMargin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/DetailPanel" unique_id=1184620356]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="DetailHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/DetailPanel/DetailMargin" unique_id=61460891]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="DetailIcon" type="ColorRect" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/DetailPanel/DetailMargin/DetailHBox" unique_id=1793798490]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+color = Color(0.2, 0.2, 0.2, 0.5)
+
+[node name="DetailTextVBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/DetailPanel/DetailMargin/DetailHBox" unique_id=254862377]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DetailNameLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/DetailPanel/DetailMargin/DetailHBox/DetailTextVBox" unique_id=517103281]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Pilih item untuk melihat detail"
+
+[node name="DetailDescLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/DetailPanel/DetailMargin/DetailHBox/DetailTextVBox" unique_id=1953547373]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+text = "Gunakan tombol panah atau klik mouse untuk memilih slot."
+
+[node name="BtnEatDish" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/DetailPanel/DetailMargin/DetailHBox" unique_id=784599901]
+visible = false
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+text = "Makan [1 Porsi]"
+
+[node name="StatusLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=388817590]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0.2, 1)
+horizontal_alignment = 1

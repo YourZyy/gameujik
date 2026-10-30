@@ -1,0 +1,22 @@
+--- a/scripts/player/player_controller.gd
++++ b/scripts/player/player_controller.gd
+@@ -367,6 +367,18 @@ func _update_hold_action(delta: float) -> void:
+ 		_was_lmb_pressed = is_lmb_pressed
+ 		return
+ 
++	# Invariant guard: Cancel active hold immediately if target landmark or active tool is no longer compatible
++	if hold_controller.is_holding():
++		var is_compat := false
++		if hold_controller.action_id == "refill":
++			is_compat = (target_id == "landmark_water")
++		elif target_id == "landmark_plot":
++			match hold_controller.action_id:
++				"hoe": is_compat = (active_tool == "tool_hoe")
++				"fertilize": is_compat = (active_tool == "tool_fertilizer")
++				"water": is_compat = (active_tool == "tool_watering_can")
++		if not is_compat:
++			hold_controller.cancel()
++
+ 	# 1. Refill watering can at water_home (2.0s hold E)
+ 	if target_id == "landmark_water":
+ 		if hold_controller.is_holding() and hold_controller.action_id == "refill":

@@ -1,0 +1,312 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/book_ui.gd" id="1_bookui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_main"]
+bg_color = Color(0.12, 0.14, 0.18, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.32, 0.4, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inset"]
+bg_color = Color(0.08, 0.09, 0.12, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.24, 0.3, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="BookUI" type="CanvasLayer" unique_id=987123401]
+layer = 10
+script = ExtResource("1_bookui")
+
+[node name="RootControl" type="Control" parent="." unique_id=987123402]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DimBackground" type="ColorRect" parent="RootControl" unique_id=987123403]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.05, 0.08, 0.75)
+
+[node name="CenterContainer" type="CenterContainer" parent="RootControl" unique_id=987123404]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="MainPanel" type="PanelContainer" parent="RootControl/CenterContainer" unique_id=987123405]
+custom_minimum_size = Vector2(880, 540)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_main")
+
+[node name="Margin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel" unique_id=987123406]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin" unique_id=987123407]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HeaderHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=987123408]
+layout_mode = 2
+
+[node name="TitleVBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/HeaderHBox" unique_id=987123409]
+layout_mode = 2
+
+[node name="BookSubtitle" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/HeaderHBox/TitleVBox" unique_id=987123410]
+modulate = Color(0.85, 0.75, 0.5, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "BUKU RESEP KELUARGA"
+
+[node name="TitleLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/HeaderHBox/TitleVBox" unique_id=987123411]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Sayur Bening Bayam dan Jagung"
+
+[node name="HeaderSpacer" type="Control" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/HeaderHBox" unique_id=987123412]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/HeaderHBox" unique_id=987123413]
+custom_minimum_size = Vector2(130, 36)
+layout_mode = 2
+text = "Tutup [Esc / B]"
+
+[node name="ContentHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=987123414]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="LeftColumn" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox" unique_id=987123415]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="NotesHeader" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn" unique_id=987123416]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Catatan Resep"
+
+[node name="NotesCard" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn" unique_id=987123417]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="NotesMargin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn/NotesCard" unique_id=987123418]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="NotesLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn/NotesCard/NotesMargin" unique_id=987123419]
+layout_mode = 2
+text = "Bayam paling enak dipetik dekat waktu memasak. Jagung di kebun ujung jalan mungkin masih bisa dipanen. Temu kunci tumbuh di tepi bambu, dekat batu besar."
+autowrap_mode = 3
+
+[node name="SpacerL" type="Control" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn" unique_id=987123420]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InfoCard" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn" unique_id=987123421]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="InfoMargin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn/InfoCard" unique_id=987123422]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="InfoVBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn/InfoCard/InfoMargin" unique_id=987123423]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="StationLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn/InfoCard/InfoMargin/InfoVBox" unique_id=987123424]
+layout_mode = 2
+text = "Tempat Memasak: Dapur Rumah"
+
+[node name="CookCountLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn/InfoCard/InfoMargin/InfoVBox" unique_id=987123425]
+layout_mode = 2
+text = "Riwayat Masak: Belum pernah dimasak"
+
+[node name="StatusBadgeLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/LeftColumn/InfoCard/InfoMargin/InfoVBox" unique_id=987123426]
+layout_mode = 2
+text = "Status: Belum dimasak"
+
+[node name="RightColumn" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox" unique_id=987123427]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="IngHeaderHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn" unique_id=987123428]
+layout_mode = 2
+
+[node name="IngTitle" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngHeaderHBox" unique_id=987123429]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Bahan yang Dibutuhkan"
+
+[node name="IngSpacer" type="Control" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngHeaderHBox" unique_id=987123430]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StockHintLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngHeaderHBox" unique_id=987123431]
+modulate = Color(0.7, 0.7, 0.7, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Stok tas + peti"
+
+[node name="IngredientsVBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn" unique_id=987123432]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="IngCard_Bayam" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox" unique_id=987123433]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="Margin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Bayam" unique_id=987123434]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Bayam/Margin" unique_id=987123435]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="RowHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Bayam/Margin/VBox" unique_id=987123436]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Bayam/Margin/VBox/RowHBox" unique_id=987123437]
+layout_mode = 2
+text = "Bayam (Sayur Segar)"
+
+[node name="Spacer" type="Control" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Bayam/Margin/VBox/RowHBox" unique_id=987123438]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BayamCountLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Bayam/Margin/VBox/RowHBox" unique_id=987123439]
+layout_mode = 2
+text = "0 / 3"
+
+[node name="BayamHintLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Bayam/Margin/VBox" unique_id=987123440]
+modulate = Color(0.8, 0.8, 0.7, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Benih ada di wadah dekat alat. Siapkan petak di pekarangan, lalu tanam."
+autowrap_mode = 3
+
+[node name="IngCard_Jagung" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox" unique_id=987123441]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="Margin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Jagung" unique_id=987123442]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Jagung/Margin" unique_id=987123443]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="RowHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Jagung/Margin/VBox" unique_id=987123444]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Jagung/Margin/VBox/RowHBox" unique_id=987123445]
+layout_mode = 2
+text = "Jagung (Hasil Kebun)"
+
+[node name="Spacer" type="Control" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Jagung/Margin/VBox/RowHBox" unique_id=987123446]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="JagungCountLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Jagung/Margin/VBox/RowHBox" unique_id=987123447]
+layout_mode = 2
+text = "0 / 1"
+
+[node name="JagungHintLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_Jagung/Margin/VBox" unique_id=987123448]
+modulate = Color(0.8, 0.8, 0.7, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Cari sisa kebun keluarga di ujung jalan, dekat pagar miring."
+autowrap_mode = 3
+
+[node name="IngCard_TemuKunci" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox" unique_id=987123449]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="Margin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_TemuKunci" unique_id=987123450]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_TemuKunci/Margin" unique_id=987123451]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="RowHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_TemuKunci/Margin/VBox" unique_id=987123452]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_TemuKunci/Margin/VBox/RowHBox" unique_id=987123453]
+layout_mode = 2
+text = "Temu Kunci (Rempah / Umbi)"
+
+[node name="Spacer" type="Control" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_TemuKunci/Margin/VBox/RowHBox" unique_id=987123454]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TemuKunciCountLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_TemuKunci/Margin/VBox/RowHBox" unique_id=987123455]
+layout_mode = 2
+text = "0 / 1"
+
+[node name="TemuKunciHintLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ContentHBox/RightColumn/IngredientsVBox/IngCard_TemuKunci/Margin/VBox" unique_id=987123456]
+modulate = Color(0.8, 0.8, 0.7, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Periksa tanaman di tepi rumpun bambu, dekat batu besar."
+autowrap_mode = 3
+
+[node name="BottomBarHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=987123457]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BottomStatusBadge" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/BottomBarHBox" unique_id=987123458]
+layout_mode = 2
+text = "Bahan belum lengkap. Ikuti petunjuk untuk mengumpulkan bahan."
+
+[node name="BottomSpacer" type="Control" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/BottomBarHBox" unique_id=987123459]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TrackButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/BottomBarHBox" unique_id=987123460]
+custom_minimum_size = Vector2(200, 42)
+layout_mode = 2
+text = "Lacak Masakan"

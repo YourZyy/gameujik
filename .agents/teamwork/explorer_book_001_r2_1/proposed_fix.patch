@@ -1,0 +1,14 @@
+--- a/scripts/main.gd
++++ b/scripts/main.gd
+@@ -60,11 +60,0 @@
+-func _unhandled_input(event: InputEvent) -> void:
+-	if event.is_action_pressed("open_book") and not event.is_echo():
+-		var im = get_node_or_null("/root/InputManager")
+-		if im != null:
+-			if im.get_current_context() == im.ContextMode.BOOK:
+-				if book_ui and book_ui.has_method("close_book"):
+-					book_ui.close_book()
+-			elif im.is_world_context():
+-				if book_ui and book_ui.has_method("open_book"):
+-					book_ui.open_book()
+-

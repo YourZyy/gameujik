@@ -1,0 +1,18 @@
+# Godot engine import cache & local metadata
+.godot/
+*.translation
+
+# Export & build outputs
+builds/
+*.exe
+*.pck
+*.zip
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary files & crash dumps
+*.tmp
+*.log

@@ -1,0 +1,392 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/kitchen_ui.gd" id="1_kitchenui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_main"]
+bg_color = Color(0.12, 0.14, 0.18, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.32, 0.4, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inset"]
+bg_color = Color(0.08, 0.09, 0.12, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.24, 0.3, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_warning"]
+bg_color = Color(0.3, 0.15, 0.05, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9, 0.5, 0.1, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="KitchenUI" type="CanvasLayer" unique_id=78451201]
+layer = 10
+script = ExtResource("1_kitchenui")
+
+[node name="RootControl" type="Control" parent="." unique_id=78451202]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DimBackground" type="ColorRect" parent="RootControl" unique_id=78451203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.05, 0.08, 0.75)
+
+[node name="CenterContainer" type="CenterContainer" parent="RootControl" unique_id=78451204]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MainPanel" type="PanelContainer" parent="RootControl/CenterContainer" unique_id=78451205]
+custom_minimum_size = Vector2(760, 520)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_main")
+
+[node name="Margin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel" unique_id=78451206]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin" unique_id=78451207]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HeaderHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=78451208]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/HeaderHBox" unique_id=78451209]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "Dapur Rumah"
+
+[node name="CloseButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/HeaderHBox" unique_id=78451210]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+text = "Tutup [Esc]"
+
+[node name="RecipeSummaryPanel" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=78451211]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="SummaryMargin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/RecipeSummaryPanel" unique_id=78451212]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="SummaryVBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/RecipeSummaryPanel/SummaryMargin" unique_id=78451213]
+layout_mode = 2
+
+[node name="RecipeTitleLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/RecipeSummaryPanel/SummaryMargin/SummaryVBox" unique_id=78451214]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Sayur Bening Bayam dan Jagung"
+
+[node name="StationDescLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/RecipeSummaryPanel/SummaryMargin/SummaryVBox" unique_id=78451215]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.8, 1)
+theme_override_font_sizes/font_size = 13
+text = "Stasiun: Dapur Rumah (station_kitchen_home)"
+
+[node name="IngredientsSection" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=78451216]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SectionTitleLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection" unique_id=78451217]
+layout_mode = 2
+text = "Bahan yang Dibutuhkan:"
+
+[node name="IngredientsGrid" type="GridContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection" unique_id=78451218]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="BayamPanel" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection/IngredientsGrid" unique_id=78451219]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="BayamMargin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection/IngredientsGrid/BayamPanel" unique_id=78451220]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="BayamLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection/IngredientsGrid/BayamPanel/BayamMargin" unique_id=78451221]
+layout_mode = 2
+text = "Bayam: 0 / 3"
+
+[node name="JagungPanel" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection/IngredientsGrid" unique_id=78451222]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="JagungMargin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection/IngredientsGrid/JagungPanel" unique_id=78451223]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="JagungLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection/IngredientsGrid/JagungPanel/JagungMargin" unique_id=78451224]
+layout_mode = 2
+text = "Jagung: 0 / 1"
+
+[node name="TemuKunciPanel" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection/IngredientsGrid" unique_id=78451225]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="TemuMargin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection/IngredientsGrid/TemuKunciPanel" unique_id=78451226]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TemuKunciLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection/IngredientsGrid/TemuKunciPanel/TemuMargin" unique_id=78451227]
+layout_mode = 2
+text = "Temu Kunci: 0 / 1"
+
+[node name="IngredientsStatusLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/IngredientsSection" unique_id=78451228]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.6, 1)
+text = "Bahan belum lengkap."
+
+[node name="PreparationSection" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=78451229]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PrepTitleLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/PreparationSection" unique_id=78451230]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Tahap 1: Persiapan Bahan"
+
+[node name="PrepProgressBar" type="ProgressBar" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/PreparationSection" unique_id=78451231]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+max_value = 4.0
+show_percentage = false
+
+[node name="PrepTimeLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/PreparationSection" unique_id=78451232]
+layout_mode = 2
+text = "Tahan Siapkan: 0.0s / 4.0s"
+
+[node name="HoldPrepButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/PreparationSection" unique_id=78451233]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Tahan untuk Menyiapkan (4.0s)"
+
+[node name="ReadySection" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=78451234]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ReadyStatusLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ReadySection" unique_id=78451235]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.9, 0.4, 1)
+theme_override_font_sizes/font_size = 15
+text = "Bahan telah siap! (Siap untuk dimasak)"
+
+[node name="StartCookingButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ReadySection" unique_id=78451236]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "Mulai Memasak"
+
+[node name="CookingSection" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=78451250]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CookingTitleLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection" unique_id=78451251]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Tahap 2: Memasak di Atas Tungku"
+
+[node name="CookingStatusLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection" unique_id=78451252]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.85, 0.4, 1.0)
+text = "Status: Memasak"
+
+[node name="CookingProgressBar" type="ProgressBar" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection" unique_id=78451253]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+max_value = 30.0
+show_percentage = false
+
+[node name="CookingTimeLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection" unique_id=78451254]
+layout_mode = 2
+text = "Progres Memasak: 0.0s / 30.0s (Sedang — 1.0x)"
+
+[node name="HeatControlHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection" unique_id=78451255]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeatTitleLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection/HeatControlHBox" unique_id=78451256]
+layout_mode = 2
+text = "Tingkat Panas:"
+
+[node name="HeatLowButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection/HeatControlHBox" unique_id=78451257]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rendah (0.5x)"
+
+[node name="HeatMedButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection/HeatControlHBox" unique_id=78451258]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sedang (1.0x) [Optimal]"
+
+[node name="HeatHighButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection/HeatControlHBox" unique_id=78451259]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Tinggi (0.0x) [Tertahan]"
+
+[node name="HeatWarningPanel" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection" unique_id=78451260]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_warning")
+
+[node name="HeatWarningMargin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection/HeatWarningPanel" unique_id=78451261]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="HeatWarningLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection/HeatWarningPanel/HeatWarningMargin" unique_id=78451262]
+layout_mode = 2
+theme_override_colors/font_color = Color(1.0, 0.7, 0.2, 1.0)
+text = "⚠️ Panas terlalu tinggi! Proses memasak tertahan. Kecilkan panas ke Sedang."
+
+[node name="PausedPanel" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection" unique_id=78451263]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="PausedMargin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection/PausedPanel" unique_id=78451264]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="PausedHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection/PausedPanel/PausedMargin" unique_id=78451265]
+layout_mode = 2
+
+[node name="PausedLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection/PausedPanel/PausedMargin/PausedHBox" unique_id=78451266]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9, 0.8, 0.4, 1.0)
+text = "Masakan dijeda saat pintu dapur ditutup."
+
+[node name="ResumeCookingButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/CookingSection/PausedPanel/PausedMargin/PausedHBox" unique_id=78451267]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 2
+text = "Lanjutkan Memasak"
+
+[node name="OutputSection" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=78451270]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="OutputTitleLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/OutputSection" unique_id=78451271]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Tahap 3: Hidangan Siap Diambil"
+
+[node name="OutputDishPanel" type="PanelContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/OutputSection" unique_id=78451272]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="DishMargin" type="MarginContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/OutputSection/OutputDishPanel" unique_id=78451273]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="DishVBox" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/OutputSection/OutputDishPanel/DishMargin" unique_id=78451274]
+layout_mode = 2
+
+[node name="DishNameLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/OutputSection/OutputDishPanel/DishMargin/DishVBox" unique_id=78451275]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.9, 0.4, 1.0)
+theme_override_font_sizes/font_size = 16
+text = "Sayur Bening Bayam dan Jagung (1 Porsi)"
+
+[node name="DishDescLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/OutputSection/OutputDishPanel/DishMargin/DishVBox" unique_id=78451276]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.8, 1.0)
+theme_override_font_sizes/font_size = 13
+text = "Sayur bening hangat dengan daun bayam segar, pipilan jagung manis, dan aroma temu kunci."
+
+[node name="TakeDishButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/OutputSection" unique_id=78451277]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+text = "Ambil Masakan [Ke Tas]"
+
+[node name="RefundSection" type="VBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=78451237]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="RefundStatusLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/RefundSection" unique_id=78451238]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.7, 0.3, 1)
+text = "Wadah Pengembalian Dapur (Peti/Tas Penuh)"
+
+[node name="ClaimRefundButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/RefundSection" unique_id=78451239]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Ambil Barang Pengembalian"
+
+[node name="ActionsHBox" type="HBoxContainer" parent="RootControl/CenterContainer/MainPanel/Margin/VBox" unique_id=78451240]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="StartPrepButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ActionsHBox" unique_id=78451241]
+custom_minimum_size = Vector2(160, 36)
+layout_mode = 2
+text = "Siapkan Bahan"
+
+[node name="CancelButton" type="Button" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ActionsHBox" unique_id=78451242]
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+text = "Batal"
+
+[node name="FeedbackLabel" type="Label" parent="RootControl/CenterContainer/MainPanel/Margin/VBox/ActionsHBox" unique_id=78451243]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8, 0.85, 0.9, 1)
+text = ""

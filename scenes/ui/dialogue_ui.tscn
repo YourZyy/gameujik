@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://c8dialogueui001"]
+
+[ext_resource type="Script" path="res://scripts/ui/dialogue_ui.gd" id="1_dialogueui"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.12, 0.14, 0.18, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28, 0.32, 0.4, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal"]
+bg_color = Color(0.14, 0.16, 0.22, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.65, 0.35, 0.9)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=987123901]
+layer = 12
+script = ExtResource("1_dialogueui")
+
+[node name="RootControl" type="Control" parent="." unique_id=987123902]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBackground" type="ColorRect" parent="RootControl" unique_id=987123903]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.05, 0.08, 0.4)
+
+[node name="DialoguePanel" type="PanelContainer" parent="RootControl" unique_id=987123904]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 0.62
+anchor_right = 1.0
+anchor_bottom = 0.98
+offset_left = 64.0
+offset_right = -64.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="RootControl/DialoguePanel" unique_id=987123905]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="RootControl/DialoguePanel/Margin" unique_id=987123906]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderHBox" type="HBoxContainer" parent="RootControl/DialoguePanel/Margin/VBox" unique_id=987123907]
+layout_mode = 2
+
+[node name="SpeakerNameLabel" type="Label" parent="RootControl/DialoguePanel/Margin/VBox/HeaderHBox" unique_id=987123908]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.88, 0.76, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tetangga"
+
+[node name="Spacer" type="Control" parent="RootControl/DialoguePanel/Margin/VBox/HeaderHBox" unique_id=987123909]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="RootControl/DialoguePanel/Margin/VBox/HeaderHBox" unique_id=987123910]
+custom_minimum_size = Vector2(100, 28)
+layout_mode = 2
+text = "Tutup [Esc]"
+
+[node name="DialogueTextLabel" type="Label" parent="RootControl/DialoguePanel/Margin/VBox" unique_id=987123911]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_font_sizes/font_size = 18
+text = "Masih menyimpan buku itu? Coba lihat kebun di ujung jalan. Jagungnya belum semua habis."
+autowrap_mode = 3
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="RootControl/DialoguePanel/Margin/VBox" unique_id=987123912]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ConfirmModal" type="Control" parent="RootControl" unique_id=987123913]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ModalDim" type="ColorRect" parent="RootControl/ConfirmModal" unique_id=987123914]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="CenterContainer" type="CenterContainer" parent="RootControl/ConfirmModal" unique_id=987123915]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ModalPanel" type="PanelContainer" parent="RootControl/ConfirmModal/CenterContainer" unique_id=987123916]
+custom_minimum_size = Vector2(520, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="Margin" type="MarginContainer" parent="RootControl/ConfirmModal/CenterContainer/ModalPanel" unique_id=987123917]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="RootControl/ConfirmModal/CenterContainer/ModalPanel/Margin" unique_id=987123918]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ModalTitle" type="Label" parent="RootControl/ConfirmModal/CenterContainer/ModalPanel/Margin/VBox" unique_id=987123919]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.88, 0.76, 1)
+theme_override_font_sizes/font_size = 20
+text = "Konfirmasi Berbagi Hidangan"
+horizontal_alignment = 1
+
+[node name="ModalMessage" type="Label" parent="RootControl/ConfirmModal/CenterContainer/ModalPanel/Margin/VBox" unique_id=987123920]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.94, 0.96, 1)
+theme_override_font_sizes/font_size = 16
+text = "Bagikan 1 porsi hidangan ini?
+(1 porsi Sayur Bening Bayam dan Jagung dari Tas)"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ModalButtonsHBox" type="HBoxContainer" parent="RootControl/ConfirmModal/CenterContainer/ModalPanel/Margin/VBox" unique_id=987123921]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ConfirmYesButton" type="Button" parent="RootControl/ConfirmModal/CenterContainer/ModalPanel/Margin/VBox/ModalButtonsHBox" unique_id=987123922]
+custom_minimum_size = Vector2(160, 36)
+layout_mode = 2
+text = "Ya, Bagikan [Enter]"
+
+[node name="ConfirmNoButton" type="Button" parent="RootControl/ConfirmModal/CenterContainer/ModalPanel/Margin/VBox/ModalButtonsHBox" unique_id=987123923]
+custom_minimum_size = Vector2(140, 36)
+layout_mode = 2
+text = "Batal [Esc]"
