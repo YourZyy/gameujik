@@ -60,7 +60,7 @@ func _init() -> void:
 	var log_path := ProjectSettings.globalize_path("res://adversarial_cook_001_stress.log")
 	var log_file := FileAccess.open(log_path, FileAccess.WRITE)
 	if log_file != null:
-		log_file.store_line("Harness: tests/adversarial_cook_001_stress.gd")
+		log_file.store_line("Harness: tests/tools/adversarial_cook_001_stress.gd")
 		log_file.store_line("Assertions Passed: %d" % Assertions.current_suite_passed)
 		log_file.store_line("Assertions Failed: %d" % Assertions.current_suite_failed)
 		log_file.store_line("All Passed: %s" % str(all_passed and Assertions.current_suite_failed == 0))

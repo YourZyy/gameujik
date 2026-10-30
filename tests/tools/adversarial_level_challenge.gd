@@ -1,7 +1,7 @@
 extends SceneTree
 
 # Adversarial Challenge Test Harness for Milestone LVL-001
-# Executed via: godot_console.exe --headless --script res://tests/adversarial_level_challenge.gd
+# Executed via: godot_console.exe --headless --script res://tests/tools/adversarial_level_challenge.gd
 
 const LevelGrayboxClass = preload("res://scripts/world/level_graybox.gd")
 

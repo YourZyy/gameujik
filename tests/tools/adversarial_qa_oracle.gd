@@ -1,4 +1,4 @@
-## tests/adversarial_qa_oracle.gd
+## tests/tools/adversarial_qa_oracle.gd
 ## Empirical Adversarial Challenger & Invariants / Anti-Softlock Stress Oracle for QA-001
 ##
 ## Evaluates:
