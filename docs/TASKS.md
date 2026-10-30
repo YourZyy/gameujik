@@ -31,6 +31,7 @@ Task berurutan berdasarkan dependensi, bukan estimasi hari. Pemeriksaan regresi 
 | UI-001 | Pause, pengaturan, aksesibilitas dan alur error | SAVE-001 | SELESAI | [016](completed_tasks/016-kenyamanan-terpadu-menu-pause-pengaturan-aksesibilitas.md) |
 | ART-001 | Visual/audio dasar yang konsisten | UI-001 | SELESAI | [017](completed_tasks/017-identitas-visual-audio-dasar-konsisten.md) |
 | QA-001 | Playthrough, usability dan regresi P0 gameplay | ART-001 | SELESAI | [018](completed_tasks/018-playthrough-penerimaan-p0-gameplay-regresi-akhir.md) |
+| PLAN-001 | Perencanaan upgrade visual, dunia chunk, NPC bergerak dan goal 3 resep (usulan; belum mengubah dokumen sumber) | QA-001 | SELESAI — perencanaan saja | [019](completed_tasks/019-perencanaan-upgrade-kampung-hidup.md) |
 | DEMO-001 | Menjalankan game dan menelusuri demonstrasi playable P0 | QA-001 | DIKERJAKAN — harness lulus; kontrol desktop eksternal belum tervalidasi | Belum ada |
 | DIST-001 | Ekspor desktop mandiri dan uji offline | QA-001 | BELUM DIMULAI | Belum ada |
 | DIST-002 | Installer, uninstall, lisensi dan panduan distribusi | DIST-001 | BELUM DIMULAI | Belum ada |

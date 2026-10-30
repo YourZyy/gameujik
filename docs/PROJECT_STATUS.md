@@ -22,11 +22,14 @@
 - [UI-001 — Menu jeda, panel pengaturan, aksesibilitas fokus keyboard, dialog konfirmasi modal, dan sistem notifikasi toast jujur](completed_tasks/016-kenyamanan-terpadu-menu-pause-pengaturan-aksesibilitas.md).
 - [ART-001 — Identitas visual dan audio dasar yang konsisten](completed_tasks/017-identitas-visual-audio-dasar-konsisten.md).
 - [QA-001 — Playthrough penerimaan P0 gameplay dan verifikasi regresi akhir](completed_tasks/018-playthrough-penerimaan-p0-gameplay-regresi-akhir.md).
+- [PLAN-001 — Perencanaan upgrade visual, dunia chunk streaming, NPC bergerak dan goal 3 resep](completed_tasks/019-perencanaan-upgrade-kampung-hidup.md).
 
 ## Deskripsi Status Pekerjaan Terakhir
 
-**Pembaruan:** 30 Oktober 2026. **Task terakhir:** DEMO-001 (DIKERJAKAN — demonstrasi playable P0). **Task selesai terakhir:** QA-001 (SELESAI — Playthrough penerimaan P0 gameplay dan verifikasi regresi akhir). Status milestone P0 tetap selesai; demonstrasi manual desktop belum ditutup.
+**Pembaruan:** 30 Oktober 2026. **Task terakhir:** PLAN-001 (SELESAI — perencanaan saja). **Task aktif:** DEMO-001 (DIKERJAKAN).
 
-Pada 30 Oktober 2026, executable Godot 4.7.2 berhasil membuka main scene GUI dan merender menu jeda serta dunia 3D rumah/pekarangan. Master runner (`tests/test_runner.gd`) juga dijalankan ulang dan mencatat 26 suite, 8.854 asersi lulus, 0 gagal, exit code 0; QA-02/03/04/05/06 mencakup loop resep, save/resume, konservasi item, modal input, dan idempotensi. Kontrol keyboard/mouse dari otomasi desktop eksternal tidak diterima oleh window pada sesi ini, sehingga gerak manual, interaksi target, dan penutupan P0 belum dapat diklaim sebagai playtest langsung. Proses uji juga melaporkan 5.026 ObjectDB instance dan 14 resource masih digunakan saat exit; ini belum dianalisis sebagai bug runtime.
+Setelah milestone P0 (QA-001), pemilik meminta visual lebih baik, goal 3 resep warisan, dunia ~1 km² dengan chunk streaming, dan NPC bergerak. Empat dokumen rencana serta satu rencana induk ditulis di [docs/plans/](plans/00-rencana-induk.md): dunia/chunk, visual/aset/UI, goal/resep/NPC, dan dampak dokumen/uji/risiko. Rencana induk menyelaraskan ID task yang bertabrakan antar dokumen dan menyusun enam gelombang kerja mulai SCOPE-001.
 
-DEMO-001 tetap dikerjakan untuk memperoleh bukti interaksi desktop yang dapat diulang tanpa injeksi input eksternal yang gagal. Setelah itu, periksa warning cleanup tersebut sebelum menyatakan demonstrasi selesai. DIST-001 tidak dimulai; ekspor mandiri belum diverifikasi.
+Semua isi rencana berstatus USULAN. PRD, CONTENT, LEVEL_DESIGN, ART_DIRECTION dan TEST_PLAN belum diubah; keputusan lama (mis. D19 satu NPC) masih berlaku sampai SCOPE-001 dijalankan setelah pemilik menjawab pertanyaan di §5 rencana induk. Dokumen 01–04 baru dibaca sebagian oleh koordinator. Tidak ada kode game yang berubah dan Godot tidak dijalankan; angka performa masih hipotesis.
+
+Kendala: push ke GitHub ditolak (403) karena akses `YourZyy/gameujik` belum tersambung; commit hanya ada lokal di container. Bukti desktop DEMO-001 dan peringatan ObjectDB (FIX-002) tetap menunggu run di Windows pengguna. Langkah berikutnya: pemilik menjawab pertanyaan rencana induk, lalu SCOPE-001, REPO-001, TEST-001, ASSET-001. DIST-001 belum dimulai.
