@@ -16,3 +16,14 @@ Desktop.ini
 # Temporary files & crash dumps
 *.tmp
 *.log
+
+# Artefak agen/tooling lokal (REPO-001): tidak dilacak di remote; berkas tetap ada di disk lokal.
+# Alasan: ratusan berkas salinan skill (.agents/.hermes), log kerja agen (agents/, .agents/teamwork)
+# dan kunci skill memuat path mesin lokal pengguna serta mengotori diff. Pasang ulang lewat TOOL-001.
+.agents/
+.hermes/
+agents/
+skills-lock.json
+
+# Paket aset mentah buatan ASSET-001 (belum diperiksa lisensinya; jangan dilacak sebelum lolos provenance)
+assets/_incoming/
